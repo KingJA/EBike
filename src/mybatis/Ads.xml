@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jing.ebike.mapper.AdsMapper">
+	
+	<select id="queryPageMap" resultType="com.jing.ebike.model.Ads" parameterType="java.util.HashMap">
+		select * from ads 
+		<where>
+		</where>
+		order by createtime desc
+	</select>
+	
+	<select id="getAll" resultType="com.jing.ebike.model.Ads">
+		select * from ads 
+		<where>
+		</where>
+		order by createtime desc
+	</select>
+	
+	<select id="getById" resultType="com.jing.ebike.model.Ads" parameterType="java.lang.String">
+		select * from ads where id=#{id}
+	</select>
+	
+	<insert id="insert"  parameterType="com.jing.ebike.model.Ads">
+		insert into
+		ads(
+		id,
+		adname,
+		adurl,
+		createtime)values(
+		#{id,jdbcType=VARCHAR},
+		#{adName,jdbcType=VARCHAR},
+		#{adUrl,jdbcType=VARCHAR},
+		#{createTime}
+		)
+	</insert>
+	
+	<update id="update" parameterType="com.jing.ebike.model.Ads">   
+	    update ads	    
+	    <set>
+	    	<if test="adName != null and adName != ''">
+	    		adname = #{adName},
+	    	</if>
+	    	<if test="adUrl != null and adUrl != ''">
+	    		adurl = #{adUrl},
+	    	</if>
+	    </set>
+	    where id=#{id}
+  </update>
+  
+  <delete id="deleteById" parameterType="java.lang.String">
+		delete from ads where
+		id=#{id}
+  </delete>
+	
+</mapper>

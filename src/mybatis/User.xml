@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jing.ebike.mapper.UserMapper">
+	<select id="userLogin" resultType="com.jing.ebike.model.User">
+		select * from users where (username=#{userName} or mobile=#{userName}) and passwd=#{passWord}
+	</select>
+	
+	<select id="queryPageMap" resultType="com.jing.ebike.model.User" parameterType="java.util.HashMap">
+		select * from users
+		<where>
+			<if test="t.status!=null">
+			  status=#{t.status}
+			</if>
+		</where>
+		order by createtime desc
+	</select>
+	
+	<select id="getById" resultType="com.jing.ebike.model.User" parameterType="java.lang.String">
+		select * from users where id=#{id}
+	</select>
+	
+	<select id="getByUserName" resultType="com.jing.ebike.model.User" parameterType="java.lang.String">
+		select * from users where username=#{userName}
+	</select>
+	
+	<select id="getByMobile" resultType="com.jing.ebike.model.User" parameterType="java.lang.String">
+		select * from users where mobile=#{mobile}
+	</select>
+	
+	<select id="getUserIdByMobile" resultType="java.lang.String" parameterType="java.lang.String">
+		select id from users where mobile=#{mobile}
+	</select>
+	
+	<insert id="insert"  parameterType="com.jing.ebike.model.User">
+		insert into
+		users(
+		id,
+		username,
+		passwd,
+		email,
+		realname,
+		status,
+		createtime,
+		certno,
+		mobile)values(
+		#{id,jdbcType=VARCHAR},
+		#{userName,jdbcType=VARCHAR},
+		#{passWd},
+		#{email},
+		#{realName,jdbcType=VARCHAR},
+		#{status},
+		#{createTime},
+		#{certNo},
+		#{mobile}
+		)
+	</insert>
+	<update id="update" parameterType="com.jing.ebike.model.User">   
+	    update users	    
+	    <set>
+	    	<if test="userName != null and userName != ''">
+	    		username = #{userName},
+	    	</if>
+	    	<if test="email != null and email != ''">
+	    		email = #{email},
+	    	</if>
+	    	<if test="realName != null and realName != ''">
+	    		realname = #{realName},
+	    	</if>
+	    	<if test="mobile != null and mobile != ''">
+	    		mobile = #{mobile},
+	    	</if>
+	    	<if test="certNo != null and certNo != ''">
+	    		certno = #{certNo},
+	    	</if>
+	    </set>
+	    where id=#{id}
+  </update>
+	<delete id="deleteById" parameterType="java.lang.String">
+		delete from users where
+		id=#{id}
+	</delete>
+	<update id="updatePwd" parameterType="map">
+		update users set passwd=#{passWd} where id=#{id}
+	</update>
+</mapper>

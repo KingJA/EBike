@@ -1,0 +1,95 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<c:set var="ctx" value="${pageContext.servletContext.contextPath}"/>
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<!-- 防止跨域攻击 -->
+    <meta name="csrf-param" content="authenticity_token">
+    <meta name="csrf-token" content="U/dleDQyH0ryL/fsE3nhaybtLoqaXqmZZGdpJGhSiTI=">
+	<title>用户登录</title>
+	<link type="text/css" rel="stylesheet" href="/EBike/frontend/css/common.css">
+</head>
+<body>
+	<header>
+		<h2 class="fl left-title"><i class="logo-icon"></i><span>会员中心</span></h2> 
+		<a href="" class="fr vip-link"></a>
+	</header>
+	<div class="content">
+		<form action="" class="form-login">
+			<p><input type="text" name="mobileNum" id="mobileNum" placeholder="手机号/用户名"></p>
+			<p><input type="password" name="password" id="password" placeholder="请输入密码"></p>
+			<p><a class="login-btn" id="memberLogin" href="javascript:void(0)">登  录</a></p>
+			<p class="last-p">
+				<a href="/EBike/register" class="fl">新用户？</a>
+				<a href="" class="fr">忘记密码</a>
+			</p>
+		</form>
+	</div>
+	<jsp:include page="newfooter.jsp"></jsp:include>
+	<script type="text/javascript" src="/EBike/frontend/js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript">
+	
+ 		//表单提交
+		$("#memberLogin").click(function(){
+			if(!checkForm()){
+				return false;
+			}
+			var username = $("#mobileNum").val();
+			var password = $("#password").val();
+			$.ajax({
+				type: "post",
+				url: "/EBike/user/login.do",
+				data: {
+					userName: username,
+					passWord: password,
+					login:1
+				},
+				dataType: "json",
+				success: function(result) {
+					if(result.code == 1){
+						window.location.href= "/EBike/index";
+					}else{
+							alert(result.msg);
+					}
+				}
+			});
+		});
+		
+		//表单校验
+		function checkForm(){
+			var mobileNum = $("#mobileNum").val();
+			var password = $("#password").val();
+			//var mobileReg = /^((13[0-9])|(15[^4,\D])|(18[0236789]))\d{8}$/;
+			//var mobileReg = /^((13[0-9])|(14[57])|(15[^4,\D])|(18[0-9]))\d{8}$/;
+			//var emailReg = /^([a-zA-Z0-9]*[-_]?[a-zA-Z0-9]+)*@([a-zA-Z0-9]*[-_]?[a-zA-Z0-9]+)+[\\.][A-Za-z]{2,3}([\\.][A-Za-z]{2})?$/;
+			
+			if(mobileNum == "" || mobileNum == null){
+				alert("用户名不能为空！");
+				return false;
+			}
+			/*if(!mobileReg.test(mobileNum) && !emailReg.test(mobileNum)){
+				alert("用户名不正确");
+				return false;
+			}*/
+			if(password == "" || password == null){
+				alert("请输入密码！");
+				return false;
+			}
+			return true;
+		}
+		
+	</script>
+</body>
+</html>

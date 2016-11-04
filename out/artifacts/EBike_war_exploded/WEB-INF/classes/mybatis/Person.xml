@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jing.example.mapper.PersonMapper">
+	<resultMap id="Person" type="com.jing.example.model.Person">
+		<result property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="age" column="age" />
+		<result property="imageName" column="imageName" />
+		<result property="imageURL" column="imageURL" />
+		<result property="imageLink" column="imageLink" />
+	</resultMap>
+	<select id="queryPageMap" resultMap="Person" parameterType="java.util.HashMap">
+		select
+		id,
+		name,
+		age,
+		imageName,
+		imageURL,
+		imageLink
+		from person
+		<where>
+
+		</where>
+	</select>
+	
+	<select id="count" parameterType="java.util.HashMap" resultType="int">
+		select count(0) from person
+		<where>
+
+		</where>
+	</select>
+	<select id="query" resultMap="Person" parameterType="Person">
+		select * from person
+	</select>
+
+	<select id="getById" resultMap="Person" parameterType="java.lang.String">
+		select
+		*
+		from person where id =
+		#{id}
+	</select>
+	
+	<select id="getByAll" resultMap="Person">
+		select * from person
+	</select>
+
+	<insert id="insert"  parameterType="int">
+		insert into
+		person(
+		Id,
+		name,
+		age,
+		imageName,
+		imageURL,
+		imageLink)values(
+		#{id,jdbcType=VARCHAR},
+		#{name},
+		#{age},
+		#{imageName,jdbcType=VARCHAR},
+		#{imageURL,jdbcType=VARCHAR},
+		#{imageLink,jdbcType=VARCHAR}
+		)
+	</insert>
+	<update id="update" parameterType="Person">   
+	    update person	    
+	    <set>
+	    	<if test="name != null and name != ''">
+	    		name = #{name},
+	    	</if>
+	    	<if test="age != null">
+	    		age = #{age},
+	    	</if>
+	    	<if test="imageName != null">
+	    		imageName = #{imageName},
+	    	</if>
+	    	<if test="imageURL != null">
+	    		imageURL = #{imageURL},
+	    	</if>
+	    	<if test="imageLink != null">
+	    		imageLink = #{imageLink},
+	    	</if>
+	    </set>
+	    where id=#{id}
+  </update>
+	<delete id="deleteById" parameterType="java.lang.String">
+		delete from person where
+		id=#{id}
+	</delete>
+</mapper>

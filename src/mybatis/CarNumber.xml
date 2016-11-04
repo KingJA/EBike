@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jing.ebike.mapper.CarNumberMapper">
+	
+	<select id="queryPageMap" resultType="com.jing.ebike.model.CarNumber" parameterType="java.util.HashMap">
+		select * from carnumber 
+		<where>
+		</where>
+		order by createtime desc
+	</select>
+	
+	<select id="getById" resultType="com.jing.ebike.model.CarNumber" parameterType="java.lang.String">
+		select * from carnumber where id=#{id}
+	</select>
+	
+	<select id="getAvailableCarNumbers" resultType="com.jing.ebike.model.CarNumber" parameterType="map">
+		select * from carnumber where userid is null order by createtime desc limit #{page},#{pageSize}
+	</select>
+	
+	<select id="getByUserId" resultType="com.jing.ebike.model.CarNumber" parameterType="java.lang.String">
+		select * from carnumber where userid=#{userId}
+	</select>
+	
+	<insert id="insert"  parameterType="com.jing.ebike.model.CarNumber">
+		insert into
+		carnumber(
+		id,
+		carnum,
+		userid,
+		usetime,
+		createtime,
+		defencestatus)values(
+		#{id,jdbcType=VARCHAR},
+		#{carNum,jdbcType=VARCHAR},
+		#{userId,jdbcType=VARCHAR},
+		#{useTime},
+		#{createTime},
+		#{defenceStatus}
+		)
+	</insert>
+	<update id="update" parameterType="com.jing.ebike.model.CarNumber">   
+	    update carnumber	    
+	    <set>
+	    	<if test="carNum != null and carNum != ''">
+	    		carnum = #{carNum},
+	    	</if>
+	    	<if test="defenceStatus != null">
+	    		defencestatus = #{defenceStatus},
+	    	</if>
+	    	<if test="userId != null and userId != ''">
+	    		userid = #{userId},
+	    	</if>
+	    	<if test="useTime != null">
+	    		usetime = #{useTime},
+	    	</if>
+	    </set>
+	    where id=#{id}
+  </update>
+  
+  	<update id="updateByNum" parameterType="com.jing.ebike.model.CarNumber">   
+	    update carnumber	    
+	    <set>
+	    	<if test="defenceStatus != null">
+	    		defencestatus = #{defenceStatus},
+	    	</if>
+	    	<if test="useTime != null">
+	    		usetime = #{useTime},
+	    	</if>
+	    </set>
+	    where carnum = #{carNum}
+  </update>
+  
+  <delete id="deleteById" parameterType="java.lang.String">
+		delete from carnumber where
+		id=#{id}
+  </delete>
+	
+  <select id="isExistCarNum" resultType="com.jing.ebike.model.CarNumber" parameterType="java.lang.String">
+		select * from carnumber where carnum=#{carNum}
+  </select>
+</mapper>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jing.ebike.mapper.AppointmentMapper">
+	
+	<select id="queryPageMap" resultType="com.jing.ebike.model.Appointment" parameterType="java.util.HashMap">
+		select * from appointment
+		<where>
+		</where>
+		order by applytime desc
+	</select>
+	
+	<select id="getAppointsByUserId" resultType="com.jing.ebike.model.Appointment" parameterType="java.lang.String">
+		select * from appointment where userid=#{userId} order by applytime desc limit 10 
+	</select>
+	
+	<select id="checkAppointByUser" resultType="com.jing.ebike.model.Appointment" parameterType="java.lang.String">
+		select * from appointment where userid=#{userId} and status=0
+	</select>
+	
+	<select id="getById" resultType="com.jing.ebike.model.Appointment" parameterType="java.lang.String">
+		select * from appointment where id=#{id}
+	</select>
+	<insert id="insert"  parameterType="com.jing.ebike.model.Appointment">
+		insert into
+		appointment(
+		id,
+		appointtime,
+		place,
+		userid,
+		status,
+		applytime,
+		message)values(
+		#{id,jdbcType=VARCHAR},
+		#{appointTime},
+		#{place},
+		#{userId},
+		#{status},
+		#{applyTime},
+		#{message}
+		)
+	</insert>
+	<update id="update" parameterType="com.jing.ebike.model.Appointment">   
+	    update appointment	    
+	    <set>
+	    	<if test="status != null">
+	    		status = #{status},
+	    	</if>
+	    </set>
+	    where id=#{id}
+  	</update>
+  	
+  	<delete id="deleteById">
+  		delete from appointment where id=#{id}
+  	</delete>
+  	
+</mapper>

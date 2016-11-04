@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd"
+	default-lazy-init="false">
+		<!-- Autodetect POJOs labeled with the @RequestMapping annotation -->
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" /> 
+
+	<!-- Autodetect methods labeled with the @RequestMapping annotation -->
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" >
+         <property name="cacheSeconds" value="0" />
+         <property name="messageConverters">  
+            <list>  
+                <!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
+                <bean  
+                    class="org.springframework.http.converter.StringHttpMessageConverter">  
+                    <property name="supportedMediaTypes">  
+                        <list>  
+                            <value>text/html;charset=UTF-8</value>  
+                        </list>  
+                    </property>  
+                </bean>  
+            </list>  
+        </property>  
+     </bean> 
+     <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>   
+  
+     <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>  
+     
+     
+	<context:annotation-config />  
+	<mvc:annotation-driven />
+	
+  	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="com.jing.common.interceptor.UserLoginInterceptor" >
+				<property name="allowUrls">  
+			        <list>  
+			         <!--如果请求中包含以下路径，则不进行拦截  -->
+			         <value>/404</value>
+			         <value>/500</value>
+			         <value>/setDefenceTest</value>
+			         <value>/backend</value>
+			         <value>/login</value>
+			         <value>/index</value>
+			         <value>login</value>
+			         <value>push</value>
+			         <value>getUserIdByMobile</value>
+			         <value>register</value>
+			         <value>upload</value>
+			         <value>/resources</value>
+			         <value>/assets</value>
+			         <value>/js</value>  
+		              <value>/css</value>
+		              <value>/fonts</value>  
+		              <value>/img</value>
+		              <value>/image</value>  
+		              <value>/images</value>
+		              <value>/kindeditor</value>
+		              <value>/ckeditor</value>
+		              <value>/ckfinder</value>
+		              <value>/mycenter</value>
+		              <value>/complaint</value>
+		              <value>/complaintDetail</value>
+		              <value>/common/securityCodeImageAction</value>
+		              <value>/common/agreement</value>
+		              <value>/common/fetchDictionary</value>
+			        </list>
+		     	</property>  
+		    </bean>
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/backend*/*" />
+			<bean class="com.jing.common.interceptor.AdminLoginInterceptor" >
+				<property name="allowUrls">
+			        <list>
+			        <value>/login</value>
+			        <value>/resources</value>
+			        <value>/assets</value>
+			        <value>/js</value>  
+		              <value>/css</value>  
+		              <value>/image</value>  
+		              <value>/images</value>
+			         <!--如果请求中包含以下路径，则不进行拦截  -->
+			          <!-- <value>/index</value>
+			          <value>/login/validate</value> 
+			          <value>/login/logout</value> 
+			          <value>/login/lockScreen</value> 
+			          <value>/car/clientQuery</value>
+			          
+		              <value>/page</value> -->
+			        </list>  
+		     	</property>  
+		    </bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	<!-- 默认的注解映射的支持 -->
+	<context:component-scan base-package="com.jing.*.dao.impl"  use-default-filters="true">
+	</context:component-scan>
+	
+	<!-- 默认的注解映射的支持 -->
+	<context:component-scan base-package="com.jing.*.service.impl"  use-default-filters="true">
+	</context:component-scan>
+	
+	<!-- 默认的注解映射的支持 -->
+	<context:component-scan base-package="com.jing.*.controller"  use-default-filters="true">
+	</context:component-scan>
+		 <!-- ================================事务相关控制=================================================    -->
+<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" />
+ 	
+  <mvc:resources mapping="/assets/**" location="/WEB-INF/web/assets/" />
+  <mvc:resources mapping="/ckeditor/**" location="/ckeditor/" />
+  <mvc:resources mapping="/ckfinder/**" location="/ckfinder/" />
+  <mvc:resources mapping="/kindeditor/**" location="/kindeditor/" />
+  <mvc:resources mapping="/back_common/**" location="/WEB-INF/web/backend/back_common/" />
+  <mvc:resources mapping="/upload/**" location="/upload/" />
+  <mvc:resources mapping="/favicon.ico" location="/favicon.ico" />
+  
+  <mvc:resources mapping="/resources/**" location="/WEB-INF/web/resources/" />
+  <mvc:resources mapping="/**" location="/WEB-INF/web/" />
+  	<bean id="jspViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/web/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+     <!-- SpringMVC上传文件时，需要配置MultipartResolver处理器 -->  
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+        <property name="defaultEncoding" value="UTF-8"/>  
+        <!-- 指定所上传文件的总大小不能超过500KB。注意maxUploadSize属性的限制不是针对单个文件，而是所有文件的容量之和 -->  
+        <property name="maxUploadSize" value="30000000"/>  
+         <!--resolveLazily属性启用是为了推迟文件解析，以便在UploadController 中捕获文件大小异常-->    
+        <property name="resolveLazily" value="true"/> 
+    </bean>  
+        <!-- SpringMVC在超出上传文件限制时，会抛出org.springframework.web.multipart.MaxUploadSizeExceededException --> 
+         <!-- 全局异常配置[并记录错误日志] start -->     
+     <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">     
+         <property name="exceptionMappings">     
+             <props>    
+                 <!-- 这里你可以根据需要定义N多个错误异常转发 -->
+                 <prop key="java.sql.SQLException">dbError</prop> <!-- 数据库错误 --> 
+                 <prop key="java.lang.Exception">errors/error</prop>     
+                 <prop key="java.lang.Throwable">errors/err</prop> 
+                 <prop key="com.jing.common.interceptor.SessionTimeoutException">redirect:/login</prop>
+                 <prop key="com.jing.common.interceptor.BackendTimeoutException">redirect:/backendTimeout</prop>
+                 <prop key="com.jing.common.interceptor.NoPrivException">redirect:/noPriv</prop>
+                 <!-- 遇到MaxUploadSizeExceededException异常时，自动跳转到/WEB-INF/web/error_fileupload.jsp页面 -->  
+                 <prop key="org.springframework.web.multipart.MaxUploadSizeExceededException">errors</prop>
+             </props>  
+         </property>     
+         <property name="statusCodes">     
+             <props>     
+                 <prop key="errors/error">500</prop>   <!--errors/error.jsp -->  
+                 <prop key="errors/404">404</prop>     
+             </props>     
+         </property>     
+         <!-- 设置日志输出级别，不定义则默认不输出警告等错误日志信息 -->     
+         <property name="warnLogCategory" value="WARN"></property>     
+         <!-- 默认错误页面，当找不到上面mappings中指定的异常对应视图时，使用本默认配置 -->     
+         <property name="defaultErrorView" value="errors/error"></property>     
+         <!-- 默认HTTP状态码 -->     
+         <property name="defaultStatusCode" value="500"></property>    
+          
+     </bean>     
+     <!-- 全局异常配置 end -->  
+</beans>

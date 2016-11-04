@@ -1,0 +1,181 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<c:set var="ctx" value="${pageContext.servletContext.contextPath}"/>
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<!-- 防止跨域攻击 -->
+    <meta name="csrf-param" content="authenticity_token">
+    <meta name="csrf-token" content="U/dleDQyH0ryL/fsE3nhaybtLoqaXqmZZGdpJGhSiTI=">
+	<title>电动车防盗管理系统</title>
+	<link type="text/css" rel="stylesheet" href="/EBike/frontend/css/common.css">
+</head>
+<body>
+	<header>
+		<h2 class="fl left-title"><i class="logo-icon"></i><span>电动车防盗管理系统</span></h2> 
+		<a href="" class="fr vip-link"></a>
+	</header>
+	<div class="content">
+		<div class="box-1"><img src="/EBike/frontend/img/system_bg.jpg" alt=""></div>
+		<ul class="tab-list">
+			<li <c:if test="${sessionScope.userId==null}"> onclick="window.location.href='/EBike/login'" </c:if><c:if test="${sessionScope.userId!=null}"> onclick="window.location.href='/EBike/selectNumber'" </c:if> style="cursor:pointer">
+				<i></i>车辆选号
+			</li>
+			<li <c:if test="${sessionScope.userId==null}"> onclick="window.location.href='/EBike/login'" </c:if><c:if test="${sessionScope.userId!=null}"> onclick="sendAppoint()" </c:if> style="cursor:pointer">
+				<i></i>预约上牌
+			</li>
+			<!-- <li id="setDefenceLI" onclick="setDefence()" style="cursor:pointer">
+				<i></i>车辆设防
+			</li>
+			<li id="deleteDefenceLI" onclick="deleteDefence()" style="cursor:pointer;display:none;">
+				<i></i>车辆撤防
+			</li>
+			<li></li> -->
+		</ul>
+		<dl class="position-box">
+			<dt>目前您的车辆所在位置</dt>
+			<dd>
+			<c:if test="${sessionScope.loginUser==null}">
+	        	请先<a href="/EBike/login">登录</a>后查看您的电动车最新位置
+	        </c:if>
+	        <c:if test="${sessionScope.loginUser!=null}">
+	        	<c:forEach items="${carNumbers}" var="carNumber">
+	        		车牌[<span class="carNumberClass">${carNumber.carNum}</span>]:&nbsp;&nbsp;&nbsp;&nbsp;<a id="defence${carNumber.carNum}" href="javascript:void(0)" onclick="setDefence('${carNumber.carNum}')">
+	        		<c:if test="${carNumber.defenceStatus==0}">设防</c:if><c:if test="${carNumber.defenceStatus==1}">撤防</c:if></a>
+	        		<br/><span id="currentLocation${carNumber.carNum}">天津市河北区人民路22号</span><br/>
+	        	</c:forEach>
+	        	
+	        </c:if>
+			</dd>
+		</dl>
+	</div>
+<jsp:include page="newfooter.jsp"></jsp:include>
+<script type="text/javascript" src="/EBike/frontend/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" >
+var userId = "${sessionScope.userId}";
+$(function(){
+	if(userId!=''){
+		if("${sessionScope.loginUser.certNo}"==''&&"${sessionScope.carNumber}"==''){
+			$("#currentLocation").html("请先完善登记身份证信息(我的-用户信息-<a href='/EBike/modifyInfo'>修改完善</a>)或选择车牌号(<a href='/EBike/selectNumber'>选号</a>)后查询电动车最新位置");
+		}else{
+			//var queryType = "${sessionScope.carNumber}"==''?2:1;
+			//var queryValue = "${sessionScope.carNumber}"==''?"${sessionScope.loginUser.certNo}":"${sessionScope.carNumber}";
+			$.each($(".carNumberClass"),function(i,n){
+				var ccarNumber = $(n).text();
+				$.ajax({
+						type: "get",
+						url: "http://122.226.49.30:60001/wy/wy/elecfence/warm-info-getCardWarmInfo.action",
+						data: {
+							"queryType": 1,//根据车牌号来查
+							"queryValue": ccarNumber
+						},
+						dataType: "json",
+						error:function(result){
+							$("#currentLocation"+ccarNumber).html("电动车最新位置暂时无法获取，请确认位置请求接口无误");
+						},
+						success: function(result) {
+							if(result.records!=null){
+								if(result.records.position==null){
+									$("#currentLocation"+ccarNumber).html("电动车最新位置暂时无法获取，请确认登记信息是否准确无误");
+								}else{
+									var latitude = result.records.position.latitude;
+									var longitude = result.records.position.longitude;
+									var location = latitude + "," + longitude;
+									$.ajax({
+											type: "get",
+											url: "http://api.map.baidu.com/geocoder/v2/",
+											data: {
+												"ak": "KCUlsW2Z2bhyF9zGpGsTQRlm",
+												"callback": "renderReverse",
+												"location":location,
+												"output":"json",
+												"pois":1
+											},
+											dataType: "json",
+											async:false,
+											success: function(data){
+												if(data.status==0){
+													$("#currentLocation"+ccarNumber).html(data.result.formatted_address);
+												}else{
+													alert("data.status:"+data.status);
+												}
+											}
+									});
+								}
+							}
+						}
+				});
+			});
+
+		}
+	}
+});
+/*
+function renderReverse(data){
+	if(data.status==0){
+		$("#currentLocation").html(data.result.formatted_address);
+	}else{
+		alert("data.status:"+data.status);
+	}
+}*/
+/*请求设防*/
+function setDefence(carNumber){
+		var set_status = "1";
+		var success_result = "撤防";
+		if($("#defence"+carNumber).text()=="撤防"){
+			set_status = "0";
+			success_result = "设防";
+		}
+		$.ajax({
+				type: "post",
+				url: "/EBike/user/setDefence.do",
+				data: {
+				"set_status":set_status,
+				"carNum":carNumber
+				},
+				dataType: "json",
+				async:false,
+				success: function(data){
+					if(data.code==1){
+						//$("#defence"+carNumber).onclick="deleteDefence("+carNumber+")";
+						$("#defence"+carNumber).text(success_result);
+					}else{
+						alert(data.msg);
+					}
+				}
+		});
+}
+function sendAppoint(){
+		$.ajax({
+				type: "post",
+				url: "/EBike/appoint/checkAppointByUser",
+				data: {
+				},
+				dataType: "json",
+				async:false,
+				success: function(data){
+					if(data.code==1){
+						window.location.href='/EBike/sendAppoint';
+					}else if(data.code==2){
+						alert(data.msg);
+						window.location.href='/EBike/myappoint';
+					}else{
+						alert(data.msg);
+					}
+				}
+		});
+}
+</script>
+</body>
+</html>

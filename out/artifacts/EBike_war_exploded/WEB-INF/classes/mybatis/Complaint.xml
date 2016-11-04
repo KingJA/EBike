@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jing.ebike.mapper.ComplaintMapper">
+	
+	<select id="queryPageMap" resultType="com.jing.ebike.model.Complaint" parameterType="java.util.HashMap">
+		select * from complaint
+		<where>
+		</where>
+		order by createtime desc
+	</select>
+	
+	<select id="getComplaints" resultType="com.jing.ebike.model.Complaint" parameterType="java.util.HashMap">
+		select * from complaint
+		<where>
+			<if test="userId!=null and userId!=''">
+				userid=#{userId}
+			</if>
+		</where>
+		order by createtime desc limit #{page},#{pageSize}
+	</select>
+	
+	
+	<select id="getById" resultType="com.jing.ebike.model.Complaint" parameterType="java.lang.String">
+		select * from complaint where id=#{id}
+	</select>
+	<insert id="insert"  parameterType="com.jing.ebike.model.Complaint">
+		insert into
+		complaint(
+		id,
+		title,
+		content,
+		userid,
+		status,
+		createtime)values(
+		#{id,jdbcType=VARCHAR},
+		#{title,jdbcType=VARCHAR},
+		#{content,jdbcType=VARCHAR},
+		#{userId,jdbcType=VARCHAR},
+		#{status},
+		#{createTime}
+		)
+	</insert>
+	<update id="update" parameterType="com.jing.ebike.model.Complaint">   
+	    update complaint	    
+	    <set>
+	    	<if test="result != null and result != ''">
+	    		result = #{result},
+	    	</if>
+	    	<if test="status != null">
+	    		status = #{status},
+	    	</if>
+	    </set>
+	    where id=#{id}
+  </update>
+</mapper>
