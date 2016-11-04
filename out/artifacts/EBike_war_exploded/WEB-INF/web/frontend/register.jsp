@@ -17,9 +17,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta content="telephone=no" name="format-detection" />
 	<meta content="false" id="twcClient" name="twcClient" />
 	<title>用户注册</title>
-	<link type="text/css" rel="stylesheet" href="/EBike/frontend/css/v2/style.css">
-	<link type="text/css" rel="stylesheet" href="/EBike/frontend/css/v2/member.css">
-	<script type="text/javascript" src="/EBike/frontend/js/jquery-1.7.1.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="/frontend/css/v2/style.css">
+	<link type="text/css" rel="stylesheet" href="/frontend/css/v2/member.css">
+	<script type="text/javascript" src="/frontend/js/jquery-1.7.1.min.js"></script>
 </head>
 <body id="page">
 <header class="header"> 
@@ -31,8 +31,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="Login">
   <div class="Login_top">
     <ul>
-      <li><A href="/EBike/login">登录</A></li>
-      <li class="cur"><A href="/EBike/register">注册</A></li>
+      <li><A href="/login">登录</A></li>
+      <li class="cur"><A href="/register">注册</A></li>
     </ul>
   </div>
   <div> 
@@ -93,7 +93,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			$(".submiting").show();
 			$.ajax({
 				type : "post",
-				url : "/EBike/user/register.do",
+				url : "/user/register.do",
 				data: {
 					mobileNum: mobileNum,
 					password: password,
@@ -114,7 +114,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					 	//品众注册监控
 					 	_pzRegistMonitoring();*/
 					 	//页面跳转
-						window.location.href = "/EBike/login";
+						window.location.href = "/login";
 					}else{
 						alert(result.msg);
 						$("#memberRegist").show();
@@ -210,9 +210,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <footer class="footer">
 	<div id="footer" class="ft_top">
-				<a href="/EBike/login">登录</a>|<a href="/EBike/register">注册</a>
+				<a href="/login">登录</a>|<a href="/register">注册</a>
 			</div>
-  	<p><a href="javascript:scroll(0,0)">返回顶部</a>|<a href="/EBike/index">返回首页</a>|<a href="/EBike/complaint">投诉中心</a> </p>
+  	<p><a href="javascript:scroll(0,0)">返回顶部</a>|<a href="/index">返回首页</a>|<a href="/complaint">投诉中心</a> </p>
 </footer>
 
 

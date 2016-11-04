@@ -15,6 +15,6 @@
 
 function logout(){
 	if(confirm("确定要退出登录吗?")){
-		window.location.href="/EBike/user/logout";
+		window.location.href="/user/logout";
 	}
 }

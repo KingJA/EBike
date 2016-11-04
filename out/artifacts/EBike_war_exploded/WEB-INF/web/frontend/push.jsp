@@ -11,9 +11,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <title>电动车防盗管理系统</title>
 </head>
-<script type="text/javascript" src="/EBike/frontend/js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="/EBike/frontend/js/api.js"></script>
-<script type="text/javascript" src="/EBike/frontend/js/SHA1.js"></script>
+<script type="text/javascript" src="/frontend/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/frontend/js/api.js"></script>
+<script type="text/javascript" src="/frontend/js/SHA1.js"></script>
 <script>
 if(${message.code}==1){
             var now = Date.now();

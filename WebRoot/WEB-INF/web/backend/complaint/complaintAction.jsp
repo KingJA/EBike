@@ -20,13 +20,13 @@
 <jsp:include page="../back_common/core/globalMandatoryStyles.jsp"></jsp:include>
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL STYLES -->
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/select2/select2.css"/>
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/select2/select2-metronic.css"/>
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/bootstrap-switch/css/bootstrap-switch.min.css"/>
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/jquery-tags-input/jquery.tagsinput.css"/>
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/typeahead/typeahead.css">
+<link rel="stylesheet" type="text/css" href="/assets/plugins/select2/select2.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/select2/select2-metronic.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/bootstrap-switch/css/bootstrap-switch.min.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/jquery-tags-input/jquery.tagsinput.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
+<link rel="stylesheet" type="text/css" href="/assets/plugins/typeahead/typeahead.css">
 <!-- END PAGE LEVEL STYLES -->
 
 <!-- BEGIN THEME STYLES -->
@@ -88,7 +88,7 @@
 									</div>	
 								</div>
 						  <div class="portlet-body form">
-									<form action="/EBike/backendcomplaint/updateComplaint" method="post" id="form_complaint" class="form-horizontal">
+									<form action="/backendcomplaint/updateComplaint" method="post" id="form_complaint" class="form-horizontal">
 										<div class="form-body">
 											<!-- <h3 class="form-section">Advance validation. <small>Custom radio buttons, checkboxes and Select2 dropdowns</small></h3> -->
 											<div class="alert alert-danger display-hide">
@@ -157,30 +157,30 @@
 <!-- END CORE PLUGINS -->
 
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script type="text/javascript" src="/EBike/assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
-<script type="text/javascript" src="/EBike/assets/plugins/jquery-validation/dist/additional-methods.min.js"></script>
-<script type="text/javascript" src="/EBike/assets/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/jquery-validation/dist/additional-methods.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/select2/select2.min.js"></script>
 
-<script type="text/javascript" src="/EBike/assets/plugins/fuelux/js/spinner.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/fuelux/js/spinner.min.js"></script>
 
-<script type="text/javascript" src="/EBike/assets/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js"></script>
-<%--<script type="text/javascript" src="/EBike/assets/plugins/jquery.input-ip-address-control-1.0.min.js"></script> --%>
-<script src="/EBike/assets/plugins/jquery.pwstrength.bootstrap/src/pwstrength.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/jquery-tags-input/jquery.tagsinput.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/typeahead/handlebars.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/typeahead/typeahead.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/assets/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js"></script>
+<%--<script type="text/javascript" src="/assets/plugins/jquery.input-ip-address-control-1.0.min.js"></script> --%>
+<script src="/assets/plugins/jquery.pwstrength.bootstrap/src/pwstrength.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery-tags-input/jquery.tagsinput.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script>
+<script src="/assets/plugins/typeahead/handlebars.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/typeahead/typeahead.min.js" type="text/javascript"></script>
 <!-- dialog -->
-<script src="/EBike/assets/plugins/bootbox/bootbox.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootbox/bootbox.min.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="/EBike/assets/scripts/core/app.js" ></script>
-<script src="/EBike/assets/plugins/jquery-json/jquery.json-2.4.min.js" ></script>
-<script src="/EBike/back_common/js/serializeObjectPlugin.js" ></script>
-<script src="/EBike/back_common/js/globalConfigure.js" ></script>
+<script src="/assets/scripts/core/app.js" ></script>
+<script src="/assets/plugins/jquery-json/jquery.json-2.4.min.js" ></script>
+<script src="/back_common/js/serializeObjectPlugin.js" ></script>
+<script src="/back_common/js/globalConfigure.js" ></script>
 <!-- 效验文件自定义实现form-validation.js -->
 <!-- 上传文件 -->
 
@@ -194,11 +194,11 @@ jQuery(document).ready(function() {
 	$("#menu_2").text("投诉管理");
 	
 	   $('#cancelBtn').on( 'click', function () {
-	       window.location.href = "/EBike/backendcomplaint/complaintManagement?activeTab=tab_0";
+	       window.location.href = "/backendcomplaint/complaintManagement?activeTab=tab_0";
 	    } );
 	   
 	   $('#backBtn').on( 'click', function () {
-	       window.location.href = "/EBike/backendcomplaint/complaintManagement?activeTab=tab_0";
+	       window.location.href = "/backendcomplaint/complaintManagement?activeTab=tab_0";
 	    } );
 	   
 	   $('#resetBtn').on( 'click', function () {

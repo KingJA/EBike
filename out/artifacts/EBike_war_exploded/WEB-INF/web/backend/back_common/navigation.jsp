@@ -2,7 +2,7 @@
 <%@include file="../back_common/taglib.jsp" %>
 		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 		<a href="javascript:;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-			<img src="/EBike/assets/img/menu-toggler.png" alt=""/>
+			<img src="/assets/img/menu-toggler.png" alt=""/>
 		</a>
 		<!-- END RESPONSIVE MENU TOGGLER -->
 		<!-- BEGIN TOP NAVIGATION MENU -->
@@ -209,7 +209,7 @@
 			<!-- BEGIN USER LOGIN DROPDOWN -->
 			<li class="dropdown user">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" src="/EBike/assets/img/avatar1_small.jpg"/>
+					<img alt="" src="/assets/img/avatar1_small.jpg"/>
 					<span class="username">
 						 <%=session.getAttribute("adminName")==null?"您好，网友":session.getAttribute("adminName").toString()%>
 					</span>
@@ -217,12 +217,12 @@
 				</a>
 				<ul class="dropdown-menu">
 					<li>
-						<a href="/EBike/individualCenter/userInfo">
+						<a href="/individualCenter/userInfo">
 							<i class="fa fa-user"></i>我的信息
 						</a>
 					</li>
 					<!--<li>
-						<a href="/EBike/admin/index">
+						<a href="/admin/index">
 							<i class="fa fa-calendar"></i> 我的日历
 						</a>
 					</li>
@@ -255,7 +255,7 @@
 						</a>
 					</li>-->
 					<li>
-						<a href="/EBike/login/logout">
+						<a href="/login/logout">
 							<i class="fa fa-key"></i> 退出登录
 						</a>
 					</li>

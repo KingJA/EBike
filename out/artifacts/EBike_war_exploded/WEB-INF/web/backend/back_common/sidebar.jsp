@@ -40,22 +40,22 @@
 					</a>
 					<ul class="sub-menu">
 						<li id="userManageMenu">
-							<a href="/EBike/backenduser/userManagement"><i class="fa fa-globe"></i>
+							<a href="/backenduser/userManagement"><i class="fa fa-globe"></i>
 								车主/用户管理
 							</a>
 						</li>
 						<li id="carNumManageMenu">
-							<a href="/EBike/backendcarNum/carNumManagement"><i class="fa fa-bars"></i>
+							<a href="/backendcarNum/carNumManagement"><i class="fa fa-bars"></i>
 								选号管理
 							</a>
 						</li>
 						<li id="appointManageMenu">
-							<a href="/EBike/backendappoint/appointManagement"><i class="fa fa-envelope"></i>
+							<a href="/backendappoint/appointManagement"><i class="fa fa-envelope"></i>
 								预约管理
 							</a>
 						</li>
 						<li id="complaintManageMenu">
-							<a href="/EBike/backendcomplaint/complaintManagement"><i class="fa fa-envelope"></i>
+							<a href="/backendcomplaint/complaintManagement"><i class="fa fa-envelope"></i>
 								投诉管理
 							</a>
 						</li>
@@ -72,32 +72,32 @@
 					</a>
 					<ul class="sub-menu">
 						<li id="adminManageMenu">
-							<a href="/EBike/backenduser/adminManagement"><i class="fa fa-user"></i>
+							<a href="/backenduser/adminManagement"><i class="fa fa-user"></i>
 								管理员管理
 							</a>
 						</li>
 						<li id="adManageMenu">
-							<a href="/EBike/backendads/adsManagement"><i class="fa fa-user"></i>
+							<a href="/backendads/adsManagement"><i class="fa fa-user"></i>
 								广告管理
 							</a>
 						</li>
 						<!--  <li id="personManageMenu">
-							<a href="/EBike/backendperson/personManagement"><i class="fa fa-th"></i>
+							<a href="/backendperson/personManagement"><i class="fa fa-th"></i>
 								人员例子
 							</a>
 						</li>
 						<li id="roleManagementMenu">
-							<a href="/EBike/backendrole/roleManagement"><i class="fa fa-globe"></i>
+							<a href="/backendrole/roleManagement"><i class="fa fa-globe"></i>
 								角色管理
 							</a>
 						</li>
 						<li id="privilegeManageMenu">
-							<a href="/EBike/backendprivilege/list"><i class="fa fa-tags"></i>
+							<a href="/backendprivilege/list"><i class="fa fa-tags"></i>
 								权限管理
 							</a>
 						</li>-->
 						<li id="dictManageMenu">
-							<a href="/EBike/backenddict/index"><i class="fa fa-th"></i>
+							<a href="/backenddict/index"><i class="fa fa-th"></i>
 								 字典管理
 							</a>
 						</li>

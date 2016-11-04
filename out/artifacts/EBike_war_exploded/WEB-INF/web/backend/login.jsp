@@ -28,24 +28,24 @@ if(user != null) {
 
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 <!-- <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/> -->
-<link href="/EBike/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-<link href="/EBike/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-<link href="/EBike/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL STYLES -->
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/select2/select2.css"/>
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/select2/select2-metronic.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/select2/select2.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/select2/select2-metronic.css"/>
 <!-- END PAGE LEVEL SCRIPTS -->
 <!-- BEGIN THEME STYLES -->
-<link href="/EBike/assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
-<link href="/EBike/assets/css/style.css" rel="stylesheet" type="text/css"/>
-<link href="/EBike/assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
-<link href="/EBike/assets/css/plugins.css" rel="stylesheet" type="text/css"/>
-<link href="/EBike/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
-<link href="/EBike/assets/css/pages/login-soft.css" rel="stylesheet" type="text/css"/>
-<link href="/EBike/assets/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+<link href="/assets/css/pages/login-soft.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
-<link rel="shortcut icon" href="/EBike/favicon.ico"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -53,7 +53,7 @@ if(user != null) {
 <!-- BEGIN LOGO -->
 <div class="logo">
 	<a href="#">
-		<img src="/EBike/assets/img/GIZII.png" height="42px" alt="logo" class="img-responsive" style="margin-left:auto;margin-right:auto;"/>
+		<img src="/assets/img/GIZII.png" height="42px" alt="logo" class="img-responsive" style="margin-left:auto;margin-right:auto;"/>
 	</a>
 </div>
 <!-- END LOGO -->
@@ -147,23 +147,23 @@ if(user != null) {
 	<script src="assets/plugins/respond.min.js"></script>
 	<script src="assets/plugins/excanvas.min.js"></script> 
 	<![endif]-->
-<script src="/EBike/assets/plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="/EBike/assets/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="/EBike/assets/plugins/select2/select2.min.js"></script>
+<script src="/assets/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/assets/plugins/select2/select2.min.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="/EBike/assets/scripts/core/app.js" type="text/javascript"></script>
-<script src="/EBike/assets/scripts/custom/login-soft.js" type="text/javascript"></script>
+<script src="/assets/scripts/core/app.js" type="text/javascript"></script>
+<script src="/assets/scripts/custom/login-soft.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
 		jQuery(document).ready(function() {   

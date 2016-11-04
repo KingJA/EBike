@@ -14,10 +14,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>预约详情</title>
-<link rel="stylesheet" type="text/css" href="/EBike/frontend/css/style.css">
-<link rel="stylesheet" type="text/css" href="/EBike/frontend/css/index.css">
-<link rel="stylesheet" type="text/css" href="/EBike/frontend/css/form.css">
-<script type="text/javascript" src="/EBike/frontend/js/Adaptive.js"></script>
+<link rel="stylesheet" type="text/css" href="/frontend/css/style.css">
+<link rel="stylesheet" type="text/css" href="/frontend/css/index.css">
+<link rel="stylesheet" type="text/css" href="/frontend/css/form.css">
+<script type="text/javascript" src="/frontend/js/Adaptive.js"></script>
 </head>
 
 <body style="background: #D2E9FF;">
@@ -55,13 +55,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <jsp:include page="footer.jsp"></jsp:include> 
     
-<script type="text/javascript" src="/EBike/frontend/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/frontend/js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript">
 function cancelAppoint(id){
 	if(confirm("确认取消这次预约吗?")){
 		$.ajax({
 				type: "post",
-				url: "/EBike/appoint/cancelAppoint",
+				url: "/appoint/cancelAppoint",
 				data: {
 					"id":id
 				},
@@ -69,7 +69,7 @@ function cancelAppoint(id){
 				async:false,
 				success: function(data){
 					if(data.code==1){
-						window.location.href='/EBike/myappoint';
+						window.location.href='/myappoint';
 					}else{
 						alert(data.msg);
 					}

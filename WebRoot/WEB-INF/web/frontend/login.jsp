@@ -17,9 +17,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta content="telephone=no" name="format-detection" />
 	<meta content="false" id="twcClient" name="twcClient" />
 	<title>用户登录</title>
-	<link type="text/css" rel="stylesheet" href="/EBike/frontend/css/v2/style.css">
-	<link type="text/css" rel="stylesheet" href="/EBike/frontend/css/v2/member.css">
-	<script type="text/javascript" src="/EBike/frontend/js/jquery-1.7.1.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="/frontend/css/v2/style.css">
+	<link type="text/css" rel="stylesheet" href="/frontend/css/v2/member.css">
+	<script type="text/javascript" src="/frontend/js/jquery-1.7.1.min.js"></script>
 </head>
 <body id="page">
 <header class="header"> 
@@ -31,8 +31,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="Login">
   <div class="Login_top">
     <ul>
-      <li class="cur"><A href="/EBike/login">登录</A></li>
-      <li><A href="/EBike/register">注册</A></li>
+      <li class="cur"><A href="/login">登录</A></li>
+      <li><A href="/register">注册</A></li>
     </ul>
   </div>
   <div> 
@@ -67,7 +67,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			var password = $("#password").val();
 			$.ajax({
 				type: "post",
-				url: "/EBike/user/login.do",
+				url: "/user/login.do",
 				data: {
 					userName: username,
 					passWord: password,
@@ -79,7 +79,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						/*if(window._gsTracker) {
 					        _gsTracker.track("../../targetpage/login_success");
 					    }*/
-						window.location.href= "/EBike/index";
+						window.location.href= "/index";
 					}else{
 						/*if(result.message == 'pc用户手机号未验证'){
 							if(confirm("该手机号码已绑定您的邮箱账号，但未通过验证，您可以选择使用邮箱登录，或者点击确认去验证手机号")){
@@ -138,9 +138,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</script>
 	<footer class="footer">
 	<div id="footer" class="ft_top">
-				<a href="/EBike/login">登录</a>|<a href="/EBike/register">注册</a>
+				<a href="/login">登录</a>|<a href="/register">注册</a>
 			</div>
-  	<p><a href="javascript:scroll(0,0)">返回顶部</a>|<a href="/EBike/index">返回首页</a>|<a href="/EBike/complaint">投诉中心</a> </p>
+  	<p><a href="javascript:scroll(0,0)">返回顶部</a>|<a href="/index">返回首页</a>|<a href="/complaint">投诉中心</a> </p>
 </footer>
 
 </body>

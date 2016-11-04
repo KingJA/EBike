@@ -9,8 +9,8 @@
 	<!-- BEGIN TOP NAVIGATION BAR -->
 	<div class="header-inner">
 		<!-- BEGIN LOGO -->
-		<a class="navbar-brand" href="/EBike/microPlatform/publicNoManagement" style="padding-top:0;">
-			<img src="/EBike/assets/img/GIZII.png" height="42px" alt="logo" class="img-responsive" style="margin-left:0;margin-top:0;"/>
+		<a class="navbar-brand" href="/microPlatform/publicNoManagement" style="padding-top:0;">
+			<img src="/assets/img/GIZII.png" height="42px" alt="logo" class="img-responsive" style="margin-left:0;margin-top:0;"/>
 		</a>
 		<!-- END LOGO -->
 		
@@ -18,7 +18,7 @@
 		<div class="hor-menu hidden-sm hidden-xs">
 			<ul class="nav navbar-nav">
 				<li class="classic-menu-dropdown active">
-					<a href="/EBike/admin/index">
+					<a href="/admin/index">
 						控制中心
 						<span class="selected">
 						</span>
@@ -45,7 +45,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/EBike/help/aboutus">
+							<a href="/help/aboutus">
 								 关于我们
 							</a>
 						</li>

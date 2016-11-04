@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta name="csrf-param" content="authenticity_token">
     <meta name="csrf-token" content="U/dleDQyH0ryL/fsE3nhaybtLoqaXqmZZGdpJGhSiTI=">
 	<title>用户登录</title>
-	<link type="text/css" rel="stylesheet" href="/EBike/frontend/css/common.css">
+	<link type="text/css" rel="stylesheet" href="/frontend/css/common.css">
 </head>
 <body>
 	<header>
@@ -32,13 +32,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<p><input type="password" name="password" id="password" placeholder="请输入密码"></p>
 			<p><a class="login-btn" id="memberLogin" href="javascript:void(0)">登  录</a></p>
 			<p class="last-p">
-				<a href="/EBike/register" class="fl">新用户？</a>
+				<a href="/register" class="fl">新用户？</a>
 				<a href="" class="fr">忘记密码</a>
 			</p>
 		</form>
 	</div>
 	<jsp:include page="newfooter.jsp"></jsp:include>
-	<script type="text/javascript" src="/EBike/frontend/js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="/frontend/js/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript">
 	
  		//表单提交
@@ -50,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			var password = $("#password").val();
 			$.ajax({
 				type: "post",
-				url: "/EBike/user/login.do",
+				url: "/user/login.do",
 				data: {
 					userName: username,
 					passWord: password,
@@ -59,7 +59,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				dataType: "json",
 				success: function(result) {
 					if(result.code == 1){
-						window.location.href= "/EBike/index";
+						window.location.href= "/index";
 					}else{
 							alert(result.msg);
 					}

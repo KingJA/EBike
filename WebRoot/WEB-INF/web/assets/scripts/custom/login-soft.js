@@ -52,7 +52,7 @@ var Login = function () {
 	        			if (passWord != "") {
 	        				$.ajax({
 	        					type : "post",
-	        					url : "/EBike/admin/login.do",
+	        					url : "/admin/login.do",
 	        					data : {
 	        						userName : userName,
 	        						passWord : passWord,
@@ -63,7 +63,7 @@ var Login = function () {
 	        					success : function(data) {
 	        						//返回的数据用data.d获取内容
 	        						if (data.code == 1) {
-	        							location.href = "/EBike/admin/index";
+	        							location.href = "/admin/index";
 	        						} else {
 	        							alert(data.msg);
 	        						}
@@ -271,7 +271,7 @@ var Login = function () {
 	    				//ajax 确认用户名是否存在
 	    				$.ajax({
 	    			        type: "post",
-	    			        url: "/EBike/user/checkUserNameExists",
+	    			        url: "/user/checkUserNameExists",
 	    			        dataType: "json",
 	    			        data:{"username":$("#register_username").val()},
 	    			        success: function(data){
@@ -316,10 +316,10 @@ var Login = function () {
            // handleRegister();        
 	       
 	       	$.backstretch([
-		        "/EBike/assets/img/bg/1.jpg",
-		        "/EBike/assets/img/bg/2.jpg",
-		        "/EBike/assets/img/bg/3.jpg",
-		        "/EBike/assets/img/bg/4.jpg"
+		        "/assets/img/bg/1.jpg",
+		        "/assets/img/bg/2.jpg",
+		        "/assets/img/bg/3.jpg",
+		        "/assets/img/bg/4.jpg"
 		        ], {
 		          fade: 1000,
 		          duration: 8000

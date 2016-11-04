@@ -14,10 +14,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>预约</title>
-<link rel="stylesheet" type="text/css" href="/EBike/frontend/css/style.css">
-<link rel="stylesheet" type="text/css" href="/EBike/frontend/css/index.css">
-<link rel="stylesheet" type="text/css" href="/EBike/frontend/css/form.css">
-<script type="text/javascript" src="/EBike/frontend/js/Adaptive.js"></script>
+<link rel="stylesheet" type="text/css" href="/frontend/css/style.css">
+<link rel="stylesheet" type="text/css" href="/frontend/css/index.css">
+<link rel="stylesheet" type="text/css" href="/frontend/css/form.css">
+<script type="text/javascript" src="/frontend/js/Adaptive.js"></script>
 </head>
 
 <body style="background: #D2E9FF;">
@@ -29,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div id="_contain">
 
 
-<form id="appointForm" action="/EBike/appoint/sendAppoint" method="post" class="elegant-aero">
+<form id="appointForm" action="/appoint/sendAppoint" method="post" class="elegant-aero">
 <h1>预约上牌
 <span>请填写以下信息.</span>
 </h1>
@@ -63,8 +63,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <jsp:include page="footer.jsp"></jsp:include> 
     
-<script type="text/javascript" src="/EBike/frontend/js/jquery-1.7.1.min.js"></script>
-<script language="javascript" type="text/javascript" src="/EBike/frontend/js/WdatePicker.js"></script>
+<script type="text/javascript" src="/frontend/js/jquery-1.7.1.min.js"></script>
+<script language="javascript" type="text/javascript" src="/frontend/js/WdatePicker.js"></script>
 <script type="text/javascript">
 function submitAppointForm(){
 	if($("#appointTime").val()=='') {

@@ -18,16 +18,16 @@
 <jsp:include page="../back_common/core/globalMandatoryStyles.jsp"></jsp:include>
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL STYLES -->
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/select2/select2.css"/>
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/select2/select2-metronic.css"/>
-<link rel="stylesheet" href="/EBike/assets/plugins/data-tables/DT_bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/select2/select2.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/select2/select2-metronic.css"/>
+<link rel="stylesheet" href="/assets/plugins/data-tables/DT_bootstrap.css"/>
 <!-- 图片按钮 -->
-<link href="/EBike/assets/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css"/>
 <!-- END PAGE LEVEL STYLES -->
 <!-- BEGIN THEME STYLES -->
 <jsp:include page="../back_common/core/themeStyles.jsp"></jsp:include>
 <!-- END THEME STYLES -->
-<link rel="shortcut icon" href="/EBike/favicon.ico"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
 
 <style type="text/css" class="init">
 /* div.container {
@@ -131,26 +131,26 @@ body { font-size: 140%; } */
 <jsp:include page="../back_common/core/corePlugins.jsp"></jsp:include>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script type="text/javascript" src="/EBike/assets/plugins/select2/select2.min.js"></script>
-<script type="text/javascript" src="/EBike/assets/plugins/data-tables/jquery.dataTables.js"></script>
-<script type="text/javascript" src="/EBike/assets/plugins/data-tables/DT_bootstrap.js"></script>
+<script type="text/javascript" src="/assets/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/data-tables/jquery.dataTables.js"></script>
+<script type="text/javascript" src="/assets/plugins/data-tables/DT_bootstrap.js"></script>
 <!-- dialog -->
-<script src="/EBike/assets/plugins/bootbox/bootbox.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootbox/bootbox.min.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script type="text/javascript" src="/EBike/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 <!-- 图片按钮 -->
-<script type="text/javascript" src="/EBike/assets/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
-<script src="/EBike/assets/scripts/core/app.js"></script>
-<script src="/EBike/assets/scripts/custom/search.js"></script>
-<script src="/EBike/assets/plugins/jquery-json/jquery.json-2.4.min.js" ></script>
-<script src="/EBike/back_common/js/serializeObjectPlugin.js" ></script>
-<script src="/EBike/back_common/js/datatable.js"></script>
-<script src="/EBike/backend/carNum/js/carNumManagement-table-ajax.js"></script>
+<script type="text/javascript" src="/assets/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
+<script src="/assets/scripts/core/app.js"></script>
+<script src="/assets/scripts/custom/search.js"></script>
+<script src="/assets/plugins/jquery-json/jquery.json-2.4.min.js" ></script>
+<script src="/back_common/js/serializeObjectPlugin.js" ></script>
+<script src="/back_common/js/datatable.js"></script>
+<script src="/backend/carNum/js/carNumManagement-table-ajax.js"></script>
 <script>
 var oCarNumManagementTable;
 var activeTab = "${activeTab}";
-var carNumManagementURL = "/EBike/backendcarNum/queryMap";
+var carNumManagementURL = "/backendcarNum/queryMap";
 jQuery(document).ready(function() {     
 	
 	$("#ebikeManagementMenu").addClass("active");
@@ -191,13 +191,13 @@ jQuery(document).ready(function() {
     });
 
     $('#carNumManagement_addBtn').on( 'click', function () {
-	       window.location.href = "/EBike/backendcarNum/newCarNum";
+	       window.location.href = "/backendcarNum/newCarNum";
 	    } );
 });
 
 function editCarNumber(queryParams) {
     var arr = queryParams.split(",");
-    window.location.href = "/EBike/backendcarNum/getCarNumber?id="+arr[0];
+    window.location.href = "/backendcarNum/getCarNumber?id="+arr[0];
 }
 
 function deleteCarNumber(queryParams) {
@@ -220,12 +220,12 @@ function deleteCarNumber(queryParams) {
                      callback: function() {
                     	    $.ajax({  
 				                type : 'POST',  
-				                url :"/EBike/backendcarNum/delete" ,  
+				                url :"/backendcarNum/delete" ,
 		                        data:{"id" : arr[0]} ,
 				                dataType : 'json', 
 				                async : false,  //同步
 				                success : function(data) {  
-				                	 window.location.href = "/EBike/backendcarNum/carNumManagement?activeTab=tab_0";
+				                	 window.location.href = "/backendcarNum/carNumManagement?activeTab=tab_0";
 				                },  
 				                error : function() {  
 				                   //serverError3.show();

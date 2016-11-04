@@ -14,10 +14,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>修改密码</title>
-<link rel="stylesheet" type="text/css" href="/EBike/frontend/css/style.css">
-<link rel="stylesheet" type="text/css" href="/EBike/frontend/css/index.css">
-<link rel="stylesheet" type="text/css" href="/EBike/frontend/css/form.css">
-<script type="text/javascript" src="/EBike/frontend/js/Adaptive.js"></script>
+<link rel="stylesheet" type="text/css" href="/frontend/css/style.css">
+<link rel="stylesheet" type="text/css" href="/frontend/css/index.css">
+<link rel="stylesheet" type="text/css" href="/frontend/css/form.css">
+<script type="text/javascript" src="/frontend/js/Adaptive.js"></script>
 </head>
 
 <body style="background: #D2E9FF;">
@@ -53,7 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <jsp:include page="footer.jsp"></jsp:include> 
     
-<script type="text/javascript" src="/EBike/frontend/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/frontend/js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript">
 function submitPasswdForm(){
 	var oldpasswd = $("#oldpasswd").val();
@@ -77,7 +77,7 @@ function submitPasswdForm(){
 	}
 	$.ajax({
 		type : "post",
-		url : "/EBike/user/changePwd",
+		url : "/user/changePwd",
 		data: {
 			oldPwd: oldpasswd,
 			newPwd: password
@@ -87,7 +87,7 @@ function submitPasswdForm(){
 			if(result.code == 1){
 				alert("密码修改成功!");
 			 	//页面跳转
-				window.location.href = "/EBike/mycenter";
+				window.location.href = "/mycenter";
 			}else{
 				alert(result.msg);
 			}

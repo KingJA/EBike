@@ -11,28 +11,28 @@
 <title>字典管理</title>
 
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
-<link href="/EBike/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-<link href="/EBike/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-<link href="/EBike/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL STYLES -->
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/select2/select2.css"/>
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/select2/select2-metronic.css"/>
-<link rel="stylesheet" href="/EBike/assets/plugins/data-tables/DT_bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/select2/select2.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/select2/select2-metronic.css"/>
+<link rel="stylesheet" href="/assets/plugins/data-tables/DT_bootstrap.css"/>
 <!-- END PAGE LEVEL STYLES -->
 <!-- BEGIN THEME STYLES -->
-<link href="/EBike/assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
-<link href="/EBike/assets/css/style.css" rel="stylesheet" type="text/css"/>
-<link href="/EBike/assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
-<link href="/EBike/assets/css/plugins.css" rel="stylesheet" type="text/css"/>
-<link href="/EBike/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
-<link href="/EBike/assets/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+<link href="/assets/css/custom.css" rel="stylesheet" type="text/css"/>
 
 <!-- table style -->
  <link rel="stylesheet" type="text/css"
-	href="/EBike/assets/plugins/dataTables/resources/syntax/shCore.css">
+	href="/assets/plugins/dataTables/resources/syntax/shCore.css">
 <link rel="stylesheet" type="text/css"
-	href="/EBike/assets/plugins/dataTables/media/css/jquery.dataTables.css">
+	href="/assets/plugins/dataTables/media/css/jquery.dataTables.css">
 
 <style type="text/css">
 .content {
@@ -218,35 +218,35 @@
 <script src="assets/plugins/respond.min.js"></script>
 <script src="assets/plugins/excanvas.min.js"></script> 
 <![endif]-->
-<script src="/EBike/assets/plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script type="text/javascript" src="/EBike/assets/plugins/select2/select2.min.js"></script>
-<script type="text/javascript" src="/EBike/assets/plugins/data-tables/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="/EBike/assets/plugins/data-tables/DT_bootstrap.js"></script>
+<script type="text/javascript" src="/assets/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/data-tables/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/data-tables/DT_bootstrap.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <!-- 冲突 -->
-<script src="/EBike/assets/scripts/core/app.js"></script>
+<script src="/assets/scripts/core/app.js"></script>
 
  <script type="text/javascript" language="javascript"
-	src="/EBike/assets/plugins/dataTables/media/js/jquery.js"></script>  
+	src="/assets/plugins/dataTables/media/js/jquery.js"></script>
  <script type="text/javascript" language="javascript"
-	src="/EBike/assets/plugins/dataTables/media/js/jquery.dataTables.js"></script>  
+	src="/assets/plugins/dataTables/media/js/jquery.dataTables.js"></script>
 <script type="text/javascript" language="javascript"
-	src="/EBike/assets/plugins/dataTables/resources/syntax/shCore.js"></script>
+	src="/assets/plugins/dataTables/resources/syntax/shCore.js"></script>
  <script type="text/javascript" language="javascript"
-	src="/EBike/assets/plugins/dataTables/resources/demo.js"></script> 
+	src="/assets/plugins/dataTables/resources/demo.js"></script>
 	
 <%-- <script type="text/javascript" language="javascript"
-	src="/EBike/assets/plugins/dataTables/resources/foundation/dataTables.foundation.js"></script> --%>
+	src="/assets/plugins/dataTables/resources/foundation/dataTables.foundation.js"></script> --%>
 <!-- <script type="text/javascript" language="javascript"
 	src="assets/plugins/dataTables/extensions/ColReorder/js/dataTables.colReorder.js"></script> -->
 <!-- <script type="text/javascript" language="javascript" src="assets/plugins/dataTables/extensions/ColVis/js/dataTables.colVis.js"></script> -->
@@ -254,7 +254,7 @@
 	src="assets/plugins/dataTables/extensions/FixedColumns/js/dataTables.fixedColumns.js"></script> -->
 <!-- <script type="text/javascript" language="javascript" src="assets/plugins/dataTables/extensions/KeyTable/js/dataTables.keyTable.js"></script> -->
 <%-- <script type="text/javascript" language="javascript"
-	src="/EBike/assets/plugins/dataTables/extensions/TableTools/js/dataTables.tableTools.js"></script> --%>
+	src="/assets/plugins/dataTables/extensions/TableTools/js/dataTables.tableTools.js"></script> --%>
 <!-- <script type="text/javascript" language="javascript" src="assets/plugins/dataTables/plugIn/scrolling.js"></script> -->
 	
 
@@ -276,7 +276,7 @@ jQuery(function () {
 				return false;
 			}
 			$.ajax({
-				url : "/EBike/backenddict/save",
+				url : "/backenddict/save",
 				data : $("#mform").serialize(),
 				type : "POST",
 				dataType : 'json',
@@ -309,7 +309,7 @@ jQuery(function () {
 	}
 	function ajaxt(id){
 		$.ajax({
-				url : "/EBike/backenddict/search?dictId="+id,
+				url : "/backenddict/search?dictId="+id,
 				//data : $("#mform").serialize(),
 				type : "POST",
 				dataType : 'json',
@@ -337,7 +337,7 @@ jQuery(function () {
 	}
 	function updates(id){
 		$.ajax({
-				url : "/EBike/backenddict/updates?id="+id,
+				url : "/backenddict/updates?id="+id,
 				//data : $("#mform").serialize(),
 				type : "POST",
 				dataType : 'json',
@@ -360,7 +360,7 @@ jQuery(function () {
 	function deleteItem(id){
 		if(confirm('确定删除么？')){
 			$.ajax({
-				url : "/EBike/backenddict/delete?id="+id,
+				url : "/backenddict/delete?id="+id,
 				//data : $("#mform").serialize(),
 				type : "POST",
 				dataType : 'json',

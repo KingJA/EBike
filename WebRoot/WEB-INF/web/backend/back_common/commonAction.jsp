@@ -33,7 +33,7 @@
 						</li>
 						<li>
 							<i class="fa fa-home"></i>
-							<a  href="/EBike/admin/index">
+							<a  href="/admin/index">
 								工作台
 							</a>
 							<i class="fa fa-angle-right"></i>

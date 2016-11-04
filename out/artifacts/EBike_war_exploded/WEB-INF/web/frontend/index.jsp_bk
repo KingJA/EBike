@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta name="csrf-param" content="authenticity_token">
     <meta name="csrf-token" content="U/dleDQyH0ryL/fsE3nhaybtLoqaXqmZZGdpJGhSiTI=">
 	<title>电动车防盗管理系统</title>
-	<link type="text/css" rel="stylesheet" href="/EBike/frontend/css/common.css">
+	<link type="text/css" rel="stylesheet" href="/frontend/css/common.css">
 </head>
 <body>
 	<header>
@@ -27,12 +27,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<a href="" class="fr vip-link"></a>
 	</header>
 	<div class="content">
-		<div class="box-1"><img src="/EBike/frontend/img/system_bg.jpg" alt=""></div>
+		<div class="box-1"><img src="/frontend/img/system_bg.jpg" alt=""></div>
 		<ul class="tab-list">
-			<li <c:if test="${sessionScope.userId==null}"> onclick="window.location.href='/EBike/login'" </c:if><c:if test="${sessionScope.userId!=null}"> onclick="window.location.href='/EBike/selectNumber'" </c:if> style="cursor:pointer">
+			<li <c:if test="${sessionScope.userId==null}"> onclick="window.location.href='/login'" </c:if><c:if test="${sessionScope.userId!=null}"> onclick="window.location.href='/selectNumber'" </c:if> style="cursor:pointer">
 				<i></i>车辆选号
 			</li>
-			<li <c:if test="${sessionScope.userId==null}"> onclick="window.location.href='/EBike/login'" </c:if><c:if test="${sessionScope.userId!=null}"> onclick="sendAppoint()" </c:if> style="cursor:pointer">
+			<li <c:if test="${sessionScope.userId==null}"> onclick="window.location.href='/login'" </c:if><c:if test="${sessionScope.userId!=null}"> onclick="sendAppoint()" </c:if> style="cursor:pointer">
 				<i></i>预约上牌
 			</li>
 			<!-- <li id="setDefenceLI" onclick="setDefence()" style="cursor:pointer">
@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<dt>目前您的车辆所在位置</dt>
 			<dd>
 			<c:if test="${sessionScope.loginUser==null}">
-	        	请先<a href="/EBike/login">登录</a>后查看您的电动车最新位置
+	        	请先<a href="/login">登录</a>后查看您的电动车最新位置
 	        </c:if>
 	        <c:if test="${sessionScope.loginUser!=null}">
 	        	<c:forEach items="${carNumbers}" var="carNumber">
@@ -61,13 +61,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</dl>
 	</div>
 <jsp:include page="newfooter.jsp"></jsp:include>
-<script type="text/javascript" src="/EBike/frontend/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/frontend/js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" >
 var userId = "${sessionScope.userId}";
 $(function(){
 	if(userId!=''){
 		if("${sessionScope.loginUser.certNo}"==''&&"${sessionScope.carNumber}"==''){
-			$("#currentLocation").html("请先完善登记身份证信息(我的-用户信息-<a href='/EBike/modifyInfo'>修改完善</a>)或选择车牌号(<a href='/EBike/selectNumber'>选号</a>)后查询电动车最新位置");
+			$("#currentLocation").html("请先完善登记身份证信息(我的-用户信息-<a href='/modifyInfo'>修改完善</a>)或选择车牌号(<a href='/selectNumber'>选号</a>)后查询电动车最新位置");
 		}else{
 			//var queryType = "${sessionScope.carNumber}"==''?2:1;
 			//var queryValue = "${sessionScope.carNumber}"==''?"${sessionScope.loginUser.certNo}":"${sessionScope.carNumber}";
@@ -139,7 +139,7 @@ function setDefence(carNumber){
 		}
 		$.ajax({
 				type: "post",
-				url: "/EBike/user/setDefence.do",
+				url: "/user/setDefence.do",
 				data: {
 				"set_status":set_status,
 				"carNum":carNumber
@@ -159,17 +159,17 @@ function setDefence(carNumber){
 function sendAppoint(){
 		$.ajax({
 				type: "post",
-				url: "/EBike/appoint/checkAppointByUser",
+				url: "/appoint/checkAppointByUser",
 				data: {
 				},
 				dataType: "json",
 				async:false,
 				success: function(data){
 					if(data.code==1){
-						window.location.href='/EBike/sendAppoint';
+						window.location.href='/sendAppoint';
 					}else if(data.code==2){
 						alert(data.msg);
-						window.location.href='/EBike/myappoint';
+						window.location.href='/myappoint';
 					}else{
 						alert(data.msg);
 					}

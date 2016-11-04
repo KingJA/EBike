@@ -19,12 +19,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta name="csrf-param" content="authenticity_token">
     <meta name="csrf-token" content="U/dleDQyH0ryL/fsE3nhaybtLoqaXqmZZGdpJGhSiTI=">
 <title>电动车防盗管理系统</title>
-<link rel="stylesheet" type="text/css" href="/EBike/frontend/css/style.css">
-<link rel="stylesheet" type="text/css" href="/EBike/frontend/css/index.css">
-<link type="text/css" rel="stylesheet" href="/EBike/frontend/css/flexslider.css" />
-<script type="text/javascript" src="/EBike/frontend/js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="/EBike/frontend/js/Adaptive.js"></script>
-<script type="text/javascript" src="/EBike/frontend/js/jquery.flexslider.js"></script>
+<link rel="stylesheet" type="text/css" href="/frontend/css/style.css">
+<link rel="stylesheet" type="text/css" href="/frontend/css/index.css">
+<link type="text/css" rel="stylesheet" href="/frontend/css/flexslider.css" />
+<script type="text/javascript" src="/frontend/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/frontend/js/Adaptive.js"></script>
+<script type="text/javascript" src="/frontend/js/jquery.flexslider.js"></script>
 <script type="text/javascript" >
 $(function(){
 	if($(".flexslider").length != 0) {
@@ -41,13 +41,13 @@ function updateLicense(){
 	if(confirm("确认同步车牌信息?")){
 		$.ajax({
 			type: "post",
-			url: "/EBike/user/updateLicense.do",
+			url: "/user/updateLicense.do",
 			data: {},
 			dataType: "json",
 			async:false,
 			success: function(data){
 				if(data.code==1){
-					window.location.href="/EBike/index";
+					window.location.href="/index";
 				}else{
 					alert(data.msg);
 				}
@@ -66,7 +66,7 @@ function updateLicense(){
 	<i class="logo"></i>
     <!-- <a href="#">
     <div class="sch">
-    	<p><img src="/EBike/frontend/images/icon/sch.png">搜索目的地、帖子、景点</p>
+    	<p><img src="/frontend/images/icon/sch.png">搜索目的地、帖子、景点</p>
     </div>
     </a> -->
     <div class="head">
@@ -78,7 +78,7 @@ function updateLicense(){
 			  <section class="slider">
 				<div class="flexslider">
 				  <ul class="slides">
-				  <img src="/EBike/frontend/img/system_bg.jpg" alt="">
+				  <img src="/frontend/img/system_bg.jpg" alt="">
 				  <!--<c:forEach items="${adsList}" var="ad">
 					<li>
 						<img src="/EBike${ad.adUrl}" title="${ad.adName}" width="600px" height="280px"/>
@@ -94,7 +94,7 @@ function updateLicense(){
 	</c:forEach>
     <div class="logo-dbs">
     	<div class="dbs-img">
-        	<img src="/EBike/frontend/images/icon/logo.png">
+        	<img src="/frontend/images/icon/logo.png">
         </div>
         <p>铭智电动车管理系统</p>
     </div>
@@ -102,21 +102,21 @@ function updateLicense(){
  -->
 <div class="menu" style="display:none">
 	<div class="nav">
-    	<!--<img src="/EBike/frontend/images/menu/nav_1.png">
+    	<!--<img src="/frontend/images/menu/nav_1.png">
         <p>看攻略</p> -->
     </div>
     <c:if test="${sessionScope.carNumber==null}">
 		<div class="nav">
-	    	<!--  <img src="/EBike/frontend/images/menu/nav_2.png" <c:if test="${sessionScope.userId==null}"> onclick="window.location.href='/EBike/login'" </c:if><c:if test="${sessionScope.userId!=null}"> onclick="window.location.href='/EBike/selectNumber'" </c:if> style="cursor:pointer" />
+	    	<!--  <img src="/frontend/images/menu/nav_2.png" <c:if test="${sessionScope.userId==null}"> onclick="window.location.href='/login'" </c:if><c:if test="${sessionScope.userId!=null}"> onclick="window.location.href='/selectNumber'" </c:if> style="cursor:pointer" />
 	        <p>车辆选号</p>-->
 	    </div>
     </c:if>
 	<div class="nav">
-    	<!--<img src="/EBike/frontend/images/menu/nav_3.png" <c:if test="${sessionScope.userId==null}"> onclick="window.location.href='/EBike/login'" </c:if><c:if test="${sessionScope.userId!=null}"> onclick="sendAppoint()" </c:if> style="cursor:pointer" />
+    	<!--<img src="/frontend/images/menu/nav_3.png" <c:if test="${sessionScope.userId==null}"> onclick="window.location.href='/login'" </c:if><c:if test="${sessionScope.userId!=null}"> onclick="sendAppoint()" </c:if> style="cursor:pointer" />
         <p>预约上牌</p>-->
     </div>
 	<div class="nav">
-    	<!--<img src="/EBike/frontend/images/menu/nav_4.png">
+    	<!--<img src="/frontend/images/menu/nav_4.png">
         <p>找附近</p> -->
     </div>
 </div>
@@ -125,15 +125,15 @@ function updateLicense(){
 	<p>目前您的车辆所在位置 &nbsp;&nbsp;&nbsp;&nbsp;<a class=" button blue"  href="javascript:void(0)" onclick="updateLicense()">同步车牌</a> </p>
 </div>
 <div class="banner1" style="overflow-y:scroll">
-	<!-- <img src="/EBike/frontend/images/index/banner.png"> -->
+	<!-- <img src="/frontend/images/index/banner.png"> -->
     <div class="logo-dbs1">
     <!--<div class="dbs-img">
-        		 <img src="/EBike/frontend/images/index/bike.jpg">
+        		 <img src="/frontend/images/index/bike.jpg">
         	</div> -->
         <p style="font-size: 15px" id="location">
 	        <c:if test="${sessionScope.loginUser==null}">
-	        	请先<a href="/EBike/login">登录</a>后查看您的电动车最新位置<br/>
-    <center><a class="large button blue"  href="/EBike/register">注册</a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="large button red"  href="/EBike/login">登录</a> </center>
+	        	请先<a href="/login">登录</a>后查看您的电动车最新位置<br/>
+    <center><a class="large button blue"  href="/register">注册</a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="large button red"  href="/login">登录</a> </center>
 	        </c:if>
 	        <c:if test="${sessionScope.loginUser!=null}">
 	            
@@ -155,7 +155,7 @@ function updateLicense(){
 
 <div class="fb">
     <div class="fb-lt">
-    	<img src="/EBike/frontend/images/scenics/scenic_3.png">
+    	<img src="/frontend/images/scenics/scenic_3.png">
         <p class="fb-name">塞班岛5-6天（欢乐自由 行）</p>
         <p class="price">
         	<span class="discount">4.7折</span>
@@ -165,7 +165,7 @@ function updateLicense(){
 </div>
 <div class="fb">
     <div class="fb-lt">
-    	<img src="/EBike/frontend/images/scenics/scenic_4.png">
+    	<img src="/frontend/images/scenics/scenic_4.png">
         <p class="fb-name">夏威夷7天6晚 （三天跟团三天自由行）</p>
         <p class="price">
         	<span class="discount">8.7折</span>
@@ -175,7 +175,7 @@ function updateLicense(){
 </div>
 <div class="fb">
     <div class="fb-lt">
-    	<img src="/EBike/frontend/images/scenics/scenic_5.png">
+    	<img src="/frontend/images/scenics/scenic_5.png">
         <p class="fb-name">体验全球最长的过山车15天超爽旅游</p>
         <p class="price">
         	<span class="discount">6.2折</span>
@@ -185,7 +185,7 @@ function updateLicense(){
 </div>
 <div class="fb">
     <div class="fb-lt">
-    	<img src="/EBike/frontend/images/scenics/scenic_6.png">
+    	<img src="/frontend/images/scenics/scenic_6.png">
         <p class="fb-name">美国纽约曼哈顿5天游（体验不一样的风情）</p>
         <p class="price">
         	<span class="discount">2.8折</span>
@@ -197,13 +197,13 @@ function updateLicense(){
 </div>-->
  
 <!--  <div class="more">
-	<p>查看更多<img src="/EBike/frontend/images/icon/arr-right.png"></p>
+	<p>查看更多<img src="/frontend/images/icon/arr-right.png"></p>
 </div>  -->  
 
 </div>
 
 <jsp:include page="footer.jsp"></jsp:include>
-<script type="text/javascript" src="/EBike/frontend/js/api.js"></script>
+<script type="text/javascript" src="/frontend/js/api.js"></script>
 <script>
 if('${sessionScope.userId}'!=''){
 		apiready = function(){
@@ -256,7 +256,7 @@ function checkLocation(){
 		var ccarNumber = $(n).text();
 		$.ajax({
 				type: "post",
-				url: "/EBike/user/getLocation.do",
+				url: "/user/getLocation.do",
 				data: {
 				"carNum":ccarNumber
 				},
@@ -303,7 +303,7 @@ function checkLocation(){
 $(function(){
 	if(userId!=''){
 		if("${sessionScope.loginUser.certNo}"==''&&"${sessionScope.carNumber}"==''){
-			$("#currentLocation").html("请先完善登记身份证信息(我的-用户信息-<a href='/EBike/modifyInfo'>修改完善</a>)或选择车牌号(<a href='/EBike/selectNumber'>选号</a>)后查询电动车最新位置");
+			$("#currentLocation").html("请先完善登记身份证信息(我的-用户信息-<a href='/modifyInfo'>修改完善</a>)或选择车牌号(<a href='/selectNumber'>选号</a>)后查询电动车最新位置");
 		}else{
 		    setInterval(checkLocation,10000);
 			/*$.each($(".carNumberClass"),function(i,n){
@@ -375,7 +375,7 @@ function setDefence(carNumber){
 		}
 		$.ajax({
 				type: "post",
-				url: "/EBike/user/setDefence",
+				url: "/user/setDefence",
 				data: {
 				"set_status":set_status,
 				"carNum":carNumber
@@ -405,17 +405,17 @@ function setDefence(carNumber){
 function sendAppoint(){
 		$.ajax({
 				type: "post",
-				url: "/EBike/appoint/checkAppointByUser",
+				url: "/appoint/checkAppointByUser",
 				data: {
 				},
 				dataType: "json",
 				async:false,
 				success: function(data){
 					if(data.code==1){
-						window.location.href='/EBike/sendAppoint';
+						window.location.href='/sendAppoint';
 					}else if(data.code==2){
 						alert(data.msg);
-						window.location.href='/EBike/myappoint';
+						window.location.href='/myappoint';
 					}else{
 						alert(data.msg);
 					}

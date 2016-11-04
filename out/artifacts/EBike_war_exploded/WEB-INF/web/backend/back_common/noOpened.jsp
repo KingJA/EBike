@@ -8,7 +8,7 @@
 	<h4 class="block"></h4>
 	<p>
 		 您好，该功能未开通，请联系管理员
-		<a href="/EBike/admin/index" >
+		<a href="/admin/index" >
 			 点击这里返回首页
 		</a>
 		 .

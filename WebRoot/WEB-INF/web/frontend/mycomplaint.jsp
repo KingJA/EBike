@@ -14,9 +14,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>我的投诉</title>
-<link rel="stylesheet" type="text/css" href="/EBike/frontend/css/style.css">
-<link rel="stylesheet" type="text/css" href="/EBike/frontend/css/index.css">
-<script type="text/javascript" src="/EBike/frontend/js/Adaptive.js"></script>
+<link rel="stylesheet" type="text/css" href="/frontend/css/style.css">
+<link rel="stylesheet" type="text/css" href="/frontend/css/index.css">
+<script type="text/javascript" src="/frontend/js/Adaptive.js"></script>
 </head>
 
 <body>
@@ -25,10 +25,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<i class="logo"></i>
     <!-- <a href="#">
     <div class="sch">
-    	<p><img src="/EBike/frontend/images/icon/sch.png">搜索目的地、帖子、景点</p>
+    	<p><img src="/frontend/images/icon/sch.png">搜索目的地、帖子、景点</p>
     </div>
     </a> -->
-    <a class="large button blue" style="float:right" href="javascript:void(0)" onclick="window.location.href='/EBike/newComplaint'">+ 投诉</a>
+    <a class="large button blue" style="float:right" href="javascript:void(0)" onclick="window.location.href='/newComplaint'">+ 投诉</a>
 </header>
 
 <div id="_contain">
@@ -41,7 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<c:forEach items="#{complaints}" var="complaint">
 		<div class="fa">
 		    <div class="fa-lt">
-		        <p class="fb-name"><span style="font-size: 18px">${complaint.title}<a class="large button orange" style="float:right" href="/EBike/complaintDetail/${complaint.id}">查看详情</a></span></p>
+		        <p class="fb-name"><span style="font-size: 18px">${complaint.title}<a class="large button orange" style="float:right" href="/complaintDetail/${complaint.id}">查看详情</a></span></p>
 		    </div>
 		</div>
 	</c:forEach>
@@ -49,19 +49,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  
 <div class="more">
 	<input type="hidden" id="complaintPage" value="${page }" />
-	<p id="loadMore">查看更多<img src="/EBike/frontend/images/icon/arr-right.png"></p>
+	<p id="loadMore">查看更多<img src="/frontend/images/icon/arr-right.png"></p>
 </div>    
 
 </div>
 
 <jsp:include page="footer.jsp"></jsp:include> 
     
-<script type="text/javascript" src="/EBike/frontend/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/frontend/js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript">
 	$(".more").click(function(){
  		$.ajax({  
                type : 'POST',  
-               url :"/EBike/complaint/loadComplaints" ,  
+               url :"/complaint/loadComplaints" ,
                data:{"page" : $("#complaintPage").val(),"userId":"${sessionScope.userId}"} ,
                dataType : 'json', 
                async : false,  //同步
@@ -70,7 +70,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	               		for(i=0;i<data.res.length;i++){
 							$(".favorable").append('<div class="fa">'
 													+'<div class="fa-lt">'
-													+'<p class="fb-name">'+data.res[i].title+' <a class="large button orange" href="/EBike/complaintDetail/'+data.res[i].id+'" style="float:right">查看详情</a></p>'
+													+'<p class="fb-name">'+data.res[i].title+' <a class="large button orange" href="/complaintDetail/'+data.res[i].id+'" style="float:right">查看详情</a></p>'
 													+'</div></div>');
 						}
 						var newPage = $("#complaintPage").val()+1;

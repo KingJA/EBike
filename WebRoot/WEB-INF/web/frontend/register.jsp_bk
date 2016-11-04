@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta name="csrf-param" content="authenticity_token">
     <meta name="csrf-token" content="U/dleDQyH0ryL/fsE3nhaybtLoqaXqmZZGdpJGhSiTI=">
 	<title>用户注册</title>
-	<link type="text/css" rel="stylesheet" href="/EBike/frontend/css/common.css">
+	<link type="text/css" rel="stylesheet" href="/frontend/css/common.css">
 </head>
 <body>
 	<header>
@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</form>
 	</div>
 	<jsp:include page="newfooter.jsp"></jsp:include>
-	<script type="text/javascript" src="/EBike/frontend/js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="/frontend/js/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript">
 			
 		//表单提交
@@ -55,7 +55,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			//$(".submiting").show();
 			$.ajax({
 				type : "post",
-				url : "/EBike/user/register.do",
+				url : "/user/register.do",
 				data: {
 					mobileNum: mobileNum,
 					password: password,
@@ -77,7 +77,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					 	//品众注册监控
 					 	_pzRegistMonitoring();*/
 					 	//页面跳转
-						window.location.href = "/EBike/login";
+						window.location.href = "/login";
 					}else{
 						alert(result.msg);
 						//$("#memberRegist").show();

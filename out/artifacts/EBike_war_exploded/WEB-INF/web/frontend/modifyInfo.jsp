@@ -14,10 +14,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>完善用户信息</title>
-<link rel="stylesheet" type="text/css" href="/EBike/frontend/css/style.css">
-<link rel="stylesheet" type="text/css" href="/EBike/frontend/css/index.css">
-<link rel="stylesheet" type="text/css" href="/EBike/frontend/css/form.css">
-<script type="text/javascript" src="/EBike/frontend/js/Adaptive.js"></script>
+<link rel="stylesheet" type="text/css" href="/frontend/css/style.css">
+<link rel="stylesheet" type="text/css" href="/frontend/css/index.css">
+<link rel="stylesheet" type="text/css" href="/frontend/css/form.css">
+<script type="text/javascript" src="/frontend/js/Adaptive.js"></script>
 </head>
 
 <body style="background: #D2E9FF;">
@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<label>
 	<span>车牌号:</span>
 	<c:if test="${sessionScope.carNumber==null||sessionScope.carNumber==''}">
-		<input type="button" class="button" value="选号" onclick="window.location.href='/EBike/selectNumber'"/>
+		<input type="button" class="button" value="选号" onclick="window.location.href='/selectNumber'"/>
 	</c:if>
 	<c:if test="${sessionScope.carNumber!=null&&sessionScope.carNumber!=''}">
 		<input type="text" value="${sessionScope.carNumber}" readonly />
@@ -53,7 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</label>
 	<label>
 	<span>&nbsp;</span>
-	<input type="button" class="button" value="返回" onclick="window.location.href='/EBike/mycenter'"/><input type="button" class="button" value="提交" onclick="submitUserInfo()"/>
+	<input type="button" class="button" value="返回" onclick="window.location.href='/mycenter'"/><input type="button" class="button" value="提交" onclick="submitUserInfo()"/>
 	</label>
 </form>
 
@@ -61,7 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <jsp:include page="footer.jsp"></jsp:include> 
     
-<script type="text/javascript" src="/EBike/frontend/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/frontend/js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript">
 function isMobileNO(mobileNum){
 	var pattern = new RegExp("^((13[0-9])|(14[57])|(15[^4,\\D])|(18[0-9]))\\d{8}$");
@@ -76,7 +76,7 @@ function submitUserInfo(){
 	if(isMobileNO(mobile)){
 		$.ajax({
 			type: "post",
-			url: "/EBike/user/updateUser",
+			url: "/user/updateUser",
 			data: {
 				"id":"${sessionScope.userId}",
 				"realName":$("#realName").val(),
@@ -87,7 +87,7 @@ function submitUserInfo(){
 			async:false,
 			success: function(data){
 				if(data.code==1){
-					window.location.href='/EBike/myinfo';
+					window.location.href='/myinfo';
 				}else{
 					alert(data.msg);
 				}

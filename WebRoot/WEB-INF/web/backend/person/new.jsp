@@ -15,29 +15,29 @@
 
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 <!-- <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/> -->
-<link href="/EBike/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-<link href="/EBike/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-<link href="/EBike/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL STYLES -->
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/select2/select2.css"/>
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/select2/select2-metronic.css"/>
-<link rel="stylesheet" href="/EBike/assets/plugins/data-tables/DT_bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/select2/select2.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/select2/select2-metronic.css"/>
+<link rel="stylesheet" href="/assets/plugins/data-tables/DT_bootstrap.css"/>
 <!-- END PAGE LEVEL STYLES -->
 <!-- BEGIN THEME STYLES -->
-<link href="/EBike/assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
-<link href="/EBike/assets/css/style.css" rel="stylesheet" type="text/css"/>
-<link href="/EBike/assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
-<link href="/EBike/assets/css/plugins.css" rel="stylesheet" type="text/css"/>
-<link href="/EBike/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
-<link href="/EBike/assets/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+<link href="/assets/css/custom.css" rel="stylesheet" type="text/css"/>
 
 <!-- form style -->
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/bootstrap-switch/css/bootstrap-switch.min.css"/>
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/jquery-tags-input/jquery.tagsinput.css"/>
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/typeahead/typeahead.css">
+<link rel="stylesheet" type="text/css" href="/assets/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/bootstrap-switch/css/bootstrap-switch.min.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/jquery-tags-input/jquery.tagsinput.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
+<link rel="stylesheet" type="text/css" href="/assets/plugins/typeahead/typeahead.css">
 
 </head>
 
@@ -116,7 +116,7 @@
 									</div>	
 								</div>
 						  <div class="portlet-body form">
-									<form action="/EBike/backendperson/save" method="post" id="form_person" class="form-horizontal">
+									<form action="/backendperson/save" method="post" id="form_person" class="form-horizontal">
 										<div class="form-body">
 											<!-- <h3 class="form-section">Advance validation. <small>Custom radio buttons, checkboxes and Select2 dropdowns</small></h3> -->
 											<div class="alert alert-danger display-hide">
@@ -178,43 +178,43 @@
 <script src="assets/plugins/respond.min.js"></script>
 <script src="assets/plugins/excanvas.min.js"></script> 
 <![endif]-->
-<script src="/EBike/assets/plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script type="text/javascript" src="/EBike/assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
-<script type="text/javascript" src="/EBike/assets/plugins/jquery-validation/dist/additional-methods.min.js"></script>
-<script type="text/javascript" src="/EBike/assets/plugins/select2/select2.min.js"></script>
-<%-- <script type="text/javascript" src="/EBike/assets/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script> --%>
-<script type="text/javascript" src="/EBike/assets/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
-<script type="text/javascript" src="/EBike/assets/plugins/ckeditor/ckeditor.js"></script>
-<%-- <script type="text/javascript" src="/EBike/assets/plugins/bootstrap-markdown/js/bootstrap-markdown.js"></script>
-<script type="text/javascript" src="/EBike/assets/plugins/bootstrap-markdown/lib/markdown.js"></script> --%>
+<script type="text/javascript" src="/assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/jquery-validation/dist/additional-methods.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/select2/select2.min.js"></script>
+<%-- <script type="text/javascript" src="/assets/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script> --%>
+<script type="text/javascript" src="/assets/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+<script type="text/javascript" src="/assets/plugins/ckeditor/ckeditor.js"></script>
+<%-- <script type="text/javascript" src="/assets/plugins/bootstrap-markdown/js/bootstrap-markdown.js"></script>
+<script type="text/javascript" src="/assets/plugins/bootstrap-markdown/lib/markdown.js"></script> --%>
 
-<script type="text/javascript" src="/EBike/assets/plugins/fuelux/js/spinner.min.js"></script>
-<script type="text/javascript" src="/EBike/assets/plugins/bootstrap-fileinput/bootstrap-fileinput.js"></script>
-<script type="text/javascript" src="/EBike/assets/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js"></script>
-<script type="text/javascript" src="/EBike/assets/plugins/jquery.input-ip-address-control-1.0.min.js"></script>
-<script src="/EBike/assets/plugins/jquery.pwstrength.bootstrap/src/pwstrength.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/jquery-tags-input/jquery.tagsinput.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/typeahead/handlebars.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/typeahead/typeahead.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/assets/plugins/fuelux/js/spinner.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/bootstrap-fileinput/bootstrap-fileinput.js"></script>
+<script type="text/javascript" src="/assets/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/jquery.input-ip-address-control-1.0.min.js"></script>
+<script src="/assets/plugins/jquery.pwstrength.bootstrap/src/pwstrength.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery-tags-input/jquery.tagsinput.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script>
+<script src="/assets/plugins/typeahead/handlebars.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/typeahead/typeahead.min.js" type="text/javascript"></script>
 
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL STYLES -->
-<script src="/EBike/assets/scripts/core/app.js" ></script>
-<script src="/EBike/assets/scripts/custom/components-form-tools.js"></script>
+<script src="/assets/scripts/core/app.js" ></script>
+<script src="/assets/scripts/custom/components-form-tools.js"></script>
 <!-- 效验文件自定义实现form-validation.js -->
-<script src="/EBike/person/js/form-person-validation.js" ></script>
+<script src="/person/js/form-person-validation.js" ></script>
 	
 
 <script type="text/javascript" language="javascript" class="init"> 
@@ -227,15 +227,15 @@ jQuery(document).ready(function() {
 	$("#menu_2").text("人员管理");
 	
 	   /*$('#submitBtn').on( 'click', function () {
-	       window.location.href = "/EBike/car/save";
+	       window.location.href = "/car/save";
 	    } );*/
 	   
 	   $('#cancelBtn').on( 'click', function () {
-	       window.location.href = "/EBike/backendperson/personManagement";
+	       window.location.href = "/backendperson/personManagement";
 	    } );
 	   
 	   $('#backBtn').on( 'click', function () {
-	       window.location.href = "/EBike/backendperson/personManagement";
+	       window.location.href = "/backendperson/personManagement";
 	    } );
 	   
 	   $('#resetBtn').on( 'click', function () {

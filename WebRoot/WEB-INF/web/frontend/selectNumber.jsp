@@ -14,9 +14,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>选号</title>
-<link rel="stylesheet" type="text/css" href="/EBike/frontend/css/style.css">
-<link rel="stylesheet" type="text/css" href="/EBike/frontend/css/index.css">
-<script type="text/javascript" src="/EBike/frontend/js/Adaptive.js"></script>
+<link rel="stylesheet" type="text/css" href="/frontend/css/style.css">
+<link rel="stylesheet" type="text/css" href="/frontend/css/index.css">
+<script type="text/javascript" src="/frontend/js/Adaptive.js"></script>
 </head>
 
 <body>
@@ -44,27 +44,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  
 <div class="more">
 	<input type="hidden" id="carNumberPage" value="${page }" />
-	<p id="loadMore">查看更多<img src="/EBike/frontend/images/icon/arr-right.png"></p>
+	<p id="loadMore">查看更多<img src="/frontend/images/icon/arr-right.png"></p>
 </div>    
 
 </div>
 
 <jsp:include page="footer.jsp"></jsp:include> 
     
-<script type="text/javascript" src="/EBike/frontend/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/frontend/js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript">
 function selectNumber(id,carNum){
 	if(confirm("确认选择"+carNum+"当作您的车牌号码吗?")){
 		$.ajax({  
                type : 'POST',  
-               url :"/EBike/carNumber/updateCarNumber" ,  
+               url :"/carNumber/updateCarNumber" ,
                data:{"id" : id} ,
                dataType : 'json', 
                async : false,  //同步
                success : function(data) {
                		if(data.code==1){
 						alert("选择成功");
-						window.location.href="/EBike/index";
+						window.location.href="/index";
 					}else{
 						alert(data.msg);
 					}
@@ -78,7 +78,7 @@ function selectNumber(id,carNum){
 	$(".more").click(function(){
 		$.ajax({  
                type : 'POST',  
-               url :"/EBike/carNumber/loadCarNumbers" ,  
+               url :"/carNumber/loadCarNumbers" ,
                data:{"page" : $("#carNumberPage").val()} ,
                dataType : 'json', 
                async : false,  //同步

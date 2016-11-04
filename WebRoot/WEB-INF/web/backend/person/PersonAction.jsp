@@ -20,13 +20,13 @@
 <jsp:include page="../back_common/core/globalMandatoryStyles.jsp"></jsp:include>
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL STYLES -->
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/select2/select2.css"/>
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/select2/select2-metronic.css"/>
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/bootstrap-switch/css/bootstrap-switch.min.css"/>
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/jquery-tags-input/jquery.tagsinput.css"/>
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
-<link rel="stylesheet" type="text/css" href="/EBike/assets/plugins/typeahead/typeahead.css">
+<link rel="stylesheet" type="text/css" href="/assets/plugins/select2/select2.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/select2/select2-metronic.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/bootstrap-switch/css/bootstrap-switch.min.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/jquery-tags-input/jquery.tagsinput.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
+<link rel="stylesheet" type="text/css" href="/assets/plugins/typeahead/typeahead.css">
 <!-- END PAGE LEVEL STYLES -->
 
 <!-- BEGIN THEME STYLES -->
@@ -34,7 +34,7 @@
 <!-- END THEME STYLES -->
 
 <!-- 上传文件 -->
-<link rel="stylesheet" type="text/css" href="/EBike/kindeditor/themes/default/default.css">
+<link rel="stylesheet" type="text/css" href="/kindeditor/themes/default/default.css">
 
 </head>
 
@@ -89,7 +89,7 @@
 									</div>	
 								</div>
 						  <div class="portlet-body form">
-									<form <c:if test="${doType eq 'add'}">action="/EBike/backendperson/save"</c:if>  <c:if test="${doType eq 'edit'}">action="/EBike/backendperson/update"</c:if> method="post" id="form_person" class="form-horizontal">
+									<form <c:if test="${doType eq 'add'}">action="/backendperson/save"</c:if>  <c:if test="${doType eq 'edit'}">action="/backendperson/update"</c:if> method="post" id="form_person" class="form-horizontal">
 									    <input type="hidden" name="id"  value="${person.id}"/>
 										<div class="form-body">
 											<!-- <h3 class="form-section">Advance validation. <small>Custom radio buttons, checkboxes and Select2 dropdowns</small></h3> -->
@@ -193,55 +193,55 @@
 <!-- END CORE PLUGINS -->
 
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script type="text/javascript" src="/EBike/assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
-<script type="text/javascript" src="/EBike/assets/plugins/jquery-validation/dist/additional-methods.min.js"></script>
-<script type="text/javascript" src="/EBike/assets/plugins/select2/select2.min.js"></script>
-<script type="text/javascript" src="/EBike/ckeditor/ckeditor.js"></script>
-<script type="text/javascript" src="/EBike/ckfinder/ckfinder.js"></script>
+<script type="text/javascript" src="/assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/jquery-validation/dist/additional-methods.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/ckfinder/ckfinder.js"></script>
 
-<script type="text/javascript" src="/EBike/assets/plugins/fuelux/js/spinner.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/fuelux/js/spinner.min.js"></script>
 
-<script type="text/javascript" src="/EBike/assets/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js"></script>
-<%--<script type="text/javascript" src="/EBike/assets/plugins/jquery.input-ip-address-control-1.0.min.js"></script> --%>
-<script src="/EBike/assets/plugins/jquery.pwstrength.bootstrap/src/pwstrength.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/jquery-tags-input/jquery.tagsinput.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/typeahead/handlebars.min.js" type="text/javascript"></script>
-<script src="/EBike/assets/plugins/typeahead/typeahead.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/assets/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js"></script>
+<%--<script type="text/javascript" src="/assets/plugins/jquery.input-ip-address-control-1.0.min.js"></script> --%>
+<script src="/assets/plugins/jquery.pwstrength.bootstrap/src/pwstrength.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/jquery-tags-input/jquery.tagsinput.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script>
+<script src="/assets/plugins/typeahead/handlebars.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/typeahead/typeahead.min.js" type="text/javascript"></script>
 <!-- dialog -->
-<script src="/EBike/assets/plugins/bootbox/bootbox.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootbox/bootbox.min.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="/EBike/assets/scripts/core/app.js" ></script>
-<script src="/EBike/assets/plugins/jquery-json/jquery.json-2.4.min.js" ></script>
-<script src="/EBike/back_common/js/serializeObjectPlugin.js" ></script>
-<script src="/EBike/back_common/js/globalConfigure.js" ></script>
+<script src="/assets/scripts/core/app.js" ></script>
+<script src="/assets/plugins/jquery-json/jquery.json-2.4.min.js" ></script>
+<script src="/back_common/js/serializeObjectPlugin.js" ></script>
+<script src="/back_common/js/globalConfigure.js" ></script>
 <!-- 效验文件自定义实现form-validation.js -->
-<script src="/EBike/backend/person/js/form-person-validation.js" ></script>
+<script src="/backend/person/js/form-person-validation.js" ></script>
 <!-- 上传文件 -->
-<script src="/EBike/kindeditor/kindeditor.js"></script>
-<script src="/EBike/kindeditor/lang/zh_CN.js"></script>
+<script src="/kindeditor/kindeditor.js"></script>
+<script src="/kindeditor/lang/zh_CN.js"></script>
 
 <script type="text/javascript" language="javascript" class="init"> 
 var ckEditor; //定义全局变量 ckeditor
 
 jQuery(document).ready(function() {   
 	   App.init();
-	   FormValidation.init();//"/EBike/shortCut/microStationDecoration?activeTab=tab_0"
+	   FormValidation.init();//"/shortCut/microStationDecoration?activeTab=tab_0"
 	    $("#systemSettingMenu").addClass("active");
 	   $("#personManageMenu").addClass("active");
 	   $("#menu_1").text("系统设置");
 	   $("#menu_2").text("人员管理");
 	
 	   $('#cancelBtn').on( 'click', function () {
-	       window.location.href = "/EBike/backendperson/personManagement?activeTab=tab_0";
+	       window.location.href = "/backendperson/personManagement?activeTab=tab_0";
 	    } );
 	   
 	   $('#backBtn').on( 'click', function () {
-	       window.location.href = "/EBike/backendperson/personManagement?activeTab=tab_0";
+	       window.location.href = "/backendperson/personManagement?activeTab=tab_0";
 	    } );
 	   
 	   $('#resetBtn').on( 'click', function () {
