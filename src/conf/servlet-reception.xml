@@ -76,7 +76,7 @@
 		              <value>/common/agreement</value>
 		              <value>/common/fetchDictionary</value>
 			        </list>
-		     	</property>  
+		     	</property>
 		    </bean>
 		</mvc:interceptor>
 		<mvc:interceptor>
@@ -91,7 +91,7 @@
 		              <value>/css</value>  
 		              <value>/image</value>  
 		              <value>/images</value>
-			         <!--如果请求中包含以下路径，则不进行拦截  -->
+			         <!--如果请求中包含以下路径，则不进行拦截 ddddf -->
 			          <!-- <value>/index</value>
 			          <value>/login/validate</value> 
 			          <value>/login/logout</value> 
@@ -107,7 +107,7 @@
 	<!-- 默认的注解映射的支持 -->
 	<context:component-scan base-package="com.jing.*.dao.impl"  use-default-filters="true">
 	</context:component-scan>
-	
+
 	<!-- 默认的注解映射的支持 -->
 	<context:component-scan base-package="com.jing.*.service.impl"  use-default-filters="true">
 	</context:component-scan>
